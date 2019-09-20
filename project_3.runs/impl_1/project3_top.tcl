@@ -61,101 +61,29 @@ proc step_failed { step } {
 }
 
 
-start_step init_design
-set ACTIVE_STEP init_design
+start_step write_bitstream
+set ACTIVE_STEP write_bitstream
 set rc [catch {
-  create_msg_db init_design.pb
-  create_project -in_memory -part xc7z020clg484-1
-  set_property design_mode GateLvl [current_fileset]
-  set_param project.singleFileAddWarning.threshold 0
+  create_msg_db write_bitstream.pb
+  open_checkpoint project3_top_routed.dcp
   set_property webtalk.parent_dir C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.cache/wt [current_project]
-  set_property parent.project_path C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.xpr [current_project]
-  set_property ip_output_repo C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.cache/ip [current_project]
-  set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
-  add_files -quiet C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.runs/synth_1/project3_top.dcp
-  set_msg_config -source 4 -id {BD 41-1661} -limit 0
-  set_param project.isImplRun true
-  add_files C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/sources_1/bd/proc_system/proc_system.bd
-  read_ip -quiet C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/sources_1/ip/ila_0/ila_0.xci
-  set_param project.isImplRun false
   add_files C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_2/project_2.sdk/project2/Release/project2.elf
   set_property SCOPED_TO_REF proc_system [get_files -all C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_2/project_2.sdk/project2/Release/project2.elf]
   set_property SCOPED_TO_CELLS microblaze_0 [get_files -all C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_2/project_2.sdk/project2/Release/project2.elf]
-  read_xdc C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/constrs_1/imports/new/project1_zedboard.xdc
-  read_xdc C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/constrs_1/imports/Downloads/zedboard_master_XDC_RevC_D_v3.xdc
-  set_param project.isImplRun true
-  link_design -top project3_top -part xc7z020clg484-1
-  set_param project.isImplRun false
-  write_hwdef -force -file project3_top.hwdef
-  close_msg_db -file init_design.pb
+  catch { write_mem_info -force project3_top.mmi }
+  catch { write_bmm -force project3_top_bd.bmm }
+  write_bitstream -force project3_top.bit 
+  catch { write_sysdef -hwdef project3_top.hwdef -bitfile project3_top.bit -meminfo project3_top.mmi -file project3_top.sysdef }
+  catch {write_debug_probes -quiet -force project3_top}
+  catch {file copy -force project3_top.ltx debug_nets.ltx}
+  close_msg_db -file write_bitstream.pb
 } RESULT]
 if {$rc} {
-  step_failed init_design
+  step_failed write_bitstream
   return -code error $RESULT
 } else {
-  end_step init_design
-  unset ACTIVE_STEP 
-}
-
-start_step opt_design
-set ACTIVE_STEP opt_design
-set rc [catch {
-  create_msg_db opt_design.pb
-  opt_design 
-  write_checkpoint -force project3_top_opt.dcp
-  create_report "impl_1_opt_report_drc_0" "report_drc -file project3_top_drc_opted.rpt -pb project3_top_drc_opted.pb -rpx project3_top_drc_opted.rpx"
-  close_msg_db -file opt_design.pb
-} RESULT]
-if {$rc} {
-  step_failed opt_design
-  return -code error $RESULT
-} else {
-  end_step opt_design
-  unset ACTIVE_STEP 
-}
-
-start_step place_design
-set ACTIVE_STEP place_design
-set rc [catch {
-  create_msg_db place_design.pb
-  implement_debug_core 
-  place_design 
-  write_checkpoint -force project3_top_placed.dcp
-  create_report "impl_1_place_report_io_0" "report_io -file project3_top_io_placed.rpt"
-  create_report "impl_1_place_report_utilization_0" "report_utilization -file project3_top_utilization_placed.rpt -pb project3_top_utilization_placed.pb"
-  create_report "impl_1_place_report_control_sets_0" "report_control_sets -verbose -file project3_top_control_sets_placed.rpt"
-  close_msg_db -file place_design.pb
-} RESULT]
-if {$rc} {
-  step_failed place_design
-  return -code error $RESULT
-} else {
-  end_step place_design
-  unset ACTIVE_STEP 
-}
-
-start_step route_design
-set ACTIVE_STEP route_design
-set rc [catch {
-  create_msg_db route_design.pb
-  route_design 
-  write_checkpoint -force project3_top_routed.dcp
-  create_report "impl_1_route_report_drc_0" "report_drc -file project3_top_drc_routed.rpt -pb project3_top_drc_routed.pb -rpx project3_top_drc_routed.rpx"
-  create_report "impl_1_route_report_methodology_0" "report_methodology -file project3_top_methodology_drc_routed.rpt -pb project3_top_methodology_drc_routed.pb -rpx project3_top_methodology_drc_routed.rpx"
-  create_report "impl_1_route_report_power_0" "report_power -file project3_top_power_routed.rpt -pb project3_top_power_summary_routed.pb -rpx project3_top_power_routed.rpx"
-  create_report "impl_1_route_report_route_status_0" "report_route_status -file project3_top_route_status.rpt -pb project3_top_route_status.pb"
-  create_report "impl_1_route_report_timing_summary_0" "report_timing_summary -max_paths 10 -file project3_top_timing_summary_routed.rpt -rpx project3_top_timing_summary_routed.rpx -warn_on_violation "
-  create_report "impl_1_route_report_incremental_reuse_0" "report_incremental_reuse -file project3_top_incremental_reuse_routed.rpt"
-  create_report "impl_1_route_report_clock_utilization_0" "report_clock_utilization -file project3_top_clock_utilization_routed.rpt"
-  close_msg_db -file route_design.pb
-} RESULT]
-if {$rc} {
-  write_checkpoint -force project3_top_routed_error.dcp
-  step_failed route_design
-  return -code error $RESULT
-} else {
-  end_step route_design
+  end_step write_bitstream
   unset ACTIVE_STEP 
 }
 
