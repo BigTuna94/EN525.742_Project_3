@@ -1,6 +1,6 @@
 Vivado Simulator 2017.4
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 321b0fe38533432fb9da45e2c8c00e2b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot lowlevel_dac_intfc_tb_behav xil_defaultlib.lowlevel_dac_intfc_tb xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 3a04b5eaa5514b1880886dd243be42be --incr --debug typical --relax --mt 2 -L xbip_utils_v3_0_8 -L axi_utils_v2_0_4 -L xbip_pipe_v3_0_4 -L xbip_bram18k_v3_0_4 -L mult_gen_v12_0_13 -L xbip_dsp48_wrapper_v3_0_4 -L xbip_dsp48_addsub_v3_0_4 -L xbip_dsp48_multadd_v3_0_4 -L dds_compiler_v6_0_15 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot dds_tb_behav xil_defaultlib.dds_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -11,7 +11,44 @@ Compiling package std.standard
 Compiling package std.textio
 Compiling package ieee.std_logic_1164
 Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_textio
+Compiling package xbip_utils_v3_0_8.xbip_utils_v3_0_8_pkg
+Compiling package xbip_utils_v3_0_8.xcc_utils_v3_0
+Compiling package dds_compiler_v6_0_15.dds_compiler_v6_0_15_viv_comp
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_signed
+Compiling package dds_compiler_v6_0_15.pkg_dds_compiler_v6_0_15
+Compiling package dds_compiler_v6_0_15.dds_compiler_v6_0_15_hdl_comps
+Compiling package xbip_pipe_v3_0_4.xbip_pipe_v3_0_4_viv_comp
+Compiling package axi_utils_v2_0_4.axi_utils_v2_0_4_pkg
+Compiling package ieee.math_real
+Compiling package axi_utils_v2_0_4.global_util_pkg
+Compiling package axi_utils_v2_0_4.axi_utils_comps
+Compiling package unisim.vcomponents
+Compiling package ieee.std_logic_unsigned
+Compiling package dds_compiler_v6_0_15.pkg_betas
+Compiling package dds_compiler_v6_0_15.pkg_alphas
 Compiling module xil_defaultlib.glbl
+Compiling architecture synth of entity xbip_pipe_v3_0_4.xbip_pipe_v3_0_4_viv [\xbip_pipe_v3_0_4_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_4.xbip_pipe_v3_0_4_viv [\xbip_pipe_v3_0_4_viv(c_latency=...]
+Compiling architecture synth of entity dds_compiler_v6_0_15.dds_compiler_v6_0_15_rdy [\dds_compiler_v6_0_15_rdy(c_has_...]
+Compiling architecture synth of entity xbip_pipe_v3_0_4.xbip_pipe_v3_0_4_viv [\xbip_pipe_v3_0_4_viv(c_has_ce=1...]
+Compiling architecture synth of entity xbip_pipe_v3_0_4.xbip_pipe_v3_0_4_viv [\xbip_pipe_v3_0_4_viv(c_has_ce=1...]
+Compiling architecture synth of entity xbip_pipe_v3_0_4.xbip_pipe_v3_0_4_viv [\xbip_pipe_v3_0_4_viv(c_has_ce=1...]
+Compiling architecture synth of entity xbip_pipe_v3_0_4.xbip_pipe_v3_0_4_viv [\xbip_pipe_v3_0_4_viv(c_latency=...]
+Compiling architecture synth of entity dds_compiler_v6_0_15.pipe_add [\pipe_add(c_width=27,c_seg_width...]
+Compiling architecture synth of entity dds_compiler_v6_0_15.accum [\accum(c_xdevicefamily="zynq",c_...]
+Compiling architecture synth of entity xbip_pipe_v3_0_4.xbip_pipe_v3_0_4_viv [\xbip_pipe_v3_0_4_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_4.xbip_pipe_v3_0_4_viv [\xbip_pipe_v3_0_4_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_4.xbip_pipe_v3_0_4_viv [\xbip_pipe_v3_0_4_viv(c_latency=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_4.xbip_pipe_v3_0_4_viv [\xbip_pipe_v3_0_4_viv(c_latency=...]
+Compiling architecture synth of entity dds_compiler_v6_0_15.sin_cos [\sin_cos(c_xdevicefamily="zynq",...]
+Compiling architecture synth of entity xbip_pipe_v3_0_4.xbip_pipe_v3_0_4_viv [\xbip_pipe_v3_0_4_viv(c_has_ce=1...]
+Compiling architecture synth of entity xbip_pipe_v3_0_4.xbip_pipe_v3_0_4_viv [\xbip_pipe_v3_0_4_viv(c_has_ce=1...]
+Compiling architecture synth of entity dds_compiler_v6_0_15.dds_compiler_v6_0_15_core [\dds_compiler_v6_0_15_core(c_xde...]
+Compiling architecture synth of entity dds_compiler_v6_0_15.dds_compiler_v6_0_15_viv [\dds_compiler_v6_0_15_viv(c_xdev...]
+Compiling architecture xilinx of entity dds_compiler_v6_0_15.dds_compiler_v6_0_15 [\dds_compiler_v6_0_15(c_xdevicef...]
+Compiling architecture dds_compiler_0_arch of entity xil_defaultlib.dds_compiler_0 [dds_compiler_0_default]
 Compiling architecture behavioral of entity xil_defaultlib.lowlevel_dac_intfc [lowlevel_dac_intfc_default]
-Compiling architecture behavioral of entity xil_defaultlib.lowlevel_dac_intfc_tb
-Built simulation snapshot lowlevel_dac_intfc_tb_behav
+Compiling architecture behavioral of entity xil_defaultlib.dds_tb
+Built simulation snapshot dds_tb_behav

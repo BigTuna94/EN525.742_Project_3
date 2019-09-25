@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_2/project_2.runs/proc_system_xbar_0_synth_1'
+HD_PWD='C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.runs/proc_system_xbar_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

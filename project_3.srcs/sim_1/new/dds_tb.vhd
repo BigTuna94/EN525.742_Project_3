@@ -22,9 +22,11 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
+library ieee;
+use IEEE.std_logic_textio.all;
+use STD.textio.all;
+
 use work.all;
-
-
 
 entity dds_tb is
 end dds_tb;
@@ -57,6 +59,13 @@ END COMPONENT;
     signal dac_bclk : std_logic;
     signal dac_mclk : std_logic;
     signal dac_latched_data : std_logic;
+    
+    constant pa_50k : std_logic_vector(26 downto 0) := std_logic_vector(TO_UNSIGNED(67109, 27)); -- pase_accum  = (freq_desiredHz * 2^27) / DDS freq = (50000 * 2^27)/100MHz = 67108.864 ~= 67109
+    
+    signal num_samples : unsigned(13 downto 0) := (others => '0');
+    signal max_samples : unsigned(13 downto 0) := TO_UNSIGNED(16000, 14);
+
+    file dds_output_file : TEXT open write_mode is "./dds_output.csv";
 
 begin 
 
@@ -85,6 +94,37 @@ begin
     bclk => dac_bclk,
     mclk=> dac_mclk,
     latched_data => dac_latched_data 
-  ); 
+  );
+  
+  capture_output : process
+    variable outline : line;
+  begin
+    wait until rising_edge(clk);
+    if dds_tvalid_out = '1' then
+      if num_samples = max_samples then
+        assert num_samples < max_samples report "Simulation FInished." severity FAILURE;
+      else 
+        num_samples <= num_samples + 1;
+      end if;
+      write(outline, TO_INTEGER(signed(dds_tdata_out)));
+      write(outline, ',');
+      writeline(dds_output_file,outline);
+    end if;
+  end process capture_output;
+  
+  
+  main_tb: process
+  begin
+    reset <= '1';
+    wait for 20ns;
+    
+    dds_input_data <= "00000" & pa_50k;
+    reset <= '0'; -- Start
+    
+    
+    assert num_samples < max_samples report "Simulation FInished." severity FAILURE;
+    
+    wait;
+  end process main_tb;
 
 end Behavioral;
