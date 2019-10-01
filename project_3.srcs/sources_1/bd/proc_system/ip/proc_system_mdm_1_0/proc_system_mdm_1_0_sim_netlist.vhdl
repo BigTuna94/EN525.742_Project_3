@@ -1,10 +1,10 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4.1 (win64) Build 2117270 Tue Jan 30 15:32:00 MST 2018
--- Date        : Sat Sep  7 17:30:25 2019
+-- Date        : Wed Sep 25 19:29:57 2019
 -- Host        : ZPCX running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_2/project_2.srcs/sources_1/bd/proc_system/ip/proc_system_mdm_1_0/proc_system_mdm_1_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top proc_system_mdm_1_0 -prefix
+--               proc_system_mdm_1_0_ proc_system_mdm_1_0_sim_netlist.vhdl
 -- Design      : proc_system_mdm_1_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -41,8 +41,6 @@ entity proc_system_mdm_1_0_MB_BSCANE2 is
     Dbg_TDO_0 : in STD_LOGIC;
     \Use_Serial_Unified_Completion.sample_1_reg[15]\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of proc_system_mdm_1_0_MB_BSCANE2 : entity is "MB_BSCANE2";
 end proc_system_mdm_1_0_MB_BSCANE2;
 
 architecture STRUCTURE of proc_system_mdm_1_0_MB_BSCANE2 is
@@ -169,8 +167,6 @@ entity proc_system_mdm_1_0_MB_BUFG is
     Dbg_Clk_31 : out STD_LOGIC;
     drck_i : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of proc_system_mdm_1_0_MB_BUFG : entity is "MB_BUFG";
 end proc_system_mdm_1_0_MB_BUFG;
 
 architecture STRUCTURE of proc_system_mdm_1_0_MB_BUFG is
@@ -241,8 +237,6 @@ entity proc_system_mdm_1_0_MB_FDC_1 is
     Debug_SYS_Rst : in STD_LOGIC;
     Ext_NM_BRK : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of proc_system_mdm_1_0_MB_FDC_1 : entity is "MB_FDC_1";
 end proc_system_mdm_1_0_MB_FDC_1;
 
 architecture STRUCTURE of proc_system_mdm_1_0_MB_FDC_1 is
@@ -855,8 +849,6 @@ entity proc_system_mdm_1_0_MB_FDRE_1 is
     \Use_BSCAN.command_reg[0]\ : in STD_LOGIC;
     \Use_BSCAN.PORT_Selector_reg[0]_0\ : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of proc_system_mdm_1_0_MB_FDRE_1 : entity is "MB_FDRE_1";
 end proc_system_mdm_1_0_MB_FDRE_1;
 
 architecture STRUCTURE of proc_system_mdm_1_0_MB_FDRE_1 is
@@ -913,8 +905,6 @@ entity proc_system_mdm_1_0_MB_SRL16E is
     \Use_Serial_Unified_Completion.completion_status_reg[0]\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     config_TDO_2 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of proc_system_mdm_1_0_MB_SRL16E : entity is "MB_SRL16E";
 end proc_system_mdm_1_0_MB_SRL16E;
 
 architecture STRUCTURE of proc_system_mdm_1_0_MB_SRL16E is
@@ -1153,8 +1143,6 @@ entity proc_system_mdm_1_0_JTAG_CONTROL is
     \Use_Serial_Unified_Completion.count_reg[5]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \shift_Count_reg[0]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of proc_system_mdm_1_0_JTAG_CONTROL : entity is "JTAG_CONTROL";
 end proc_system_mdm_1_0_JTAG_CONTROL;
 
 architecture STRUCTURE of proc_system_mdm_1_0_JTAG_CONTROL is
@@ -2685,8 +2673,6 @@ entity proc_system_mdm_1_0_MDM_Core is
     E : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Use_BSCAN.command_reg[5]\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of proc_system_mdm_1_0_MDM_Core : entity is "MDM_Core";
 end proc_system_mdm_1_0_MDM_Core;
 
 architecture STRUCTURE of proc_system_mdm_1_0_MDM_Core is
@@ -4854,8 +4840,6 @@ entity proc_system_mdm_1_0_MDM is
   attribute C_USE_CROSS_TRIGGER of proc_system_mdm_1_0_MDM : entity is 0;
   attribute C_USE_UART : integer;
   attribute C_USE_UART of proc_system_mdm_1_0_MDM : entity is 0;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of proc_system_mdm_1_0_MDM : entity is "MDM";
 end proc_system_mdm_1_0_MDM;
 
 architecture STRUCTURE of proc_system_mdm_1_0_MDM is

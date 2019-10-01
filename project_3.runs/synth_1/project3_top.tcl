@@ -16,6 +16,8 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param tcl.collectionResultDisplayLimit 0
+set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7z020clg484-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -29,6 +31,9 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property ip_output_repo c:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
+add_files C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.sdk/project3/Debug/project3.elf
+set_property SCOPED_TO_REF proc_system [get_files -all C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.sdk/project3/Debug/project3.elf]
+set_property SCOPED_TO_CELLS microblaze_0 [get_files -all C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.sdk/project3/Debug/project3.elf]
 read_vhdl -library xil_defaultlib {
   C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/sources_1/imports/project_1_part_2.srcs/sources_1/imports/p1p2_src/lowlevel_dac_intfc.vhd
   C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/sources_1/imports/src/project3_top.vhd
@@ -57,14 +62,9 @@ set_property used_in_implementation false [get_files -all c:/Users/Zach/Document
 set_property used_in_implementation false [get_files -all c:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/sources_1/bd/proc_system/ip/proc_system_axi_quad_spi_0_0/proc_system_axi_quad_spi_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/sources_1/bd/proc_system/ip/proc_system_axi_quad_spi_0_0/proc_system_axi_quad_spi_0_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/sources_1/bd/proc_system/ip/proc_system_xbar_0/proc_system_xbar_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/sources_1/bd/proc_system/ip/proc_system_axi_gpio_0_0/proc_system_axi_gpio_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/sources_1/bd/proc_system/ip/proc_system_axi_gpio_0_0/proc_system_axi_gpio_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/sources_1/bd/proc_system/ip/proc_system_axi_gpio_0_0/proc_system_axi_gpio_0_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/sources_1/bd/proc_system/ip/proc_system_dds_compiler_0_0/proc_system_dds_compiler_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/sources_1/bd/proc_system/ip/proc_system_axi_gpio_1_0/proc_system_axi_gpio_1_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/sources_1/bd/proc_system/ip/proc_system_axi_gpio_1_0/proc_system_axi_gpio_1_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/sources_1/bd/proc_system/ip/proc_system_axi_gpio_1_0/proc_system_axi_gpio_1_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/sources_1/bd/proc_system/ip/proc_system_s00_mmu_0/proc_system_s00_mmu_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/sources_1/bd/proc_system/proc_system_ooc.xdc]
 
 read_ip -quiet C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/sources_1/ip/ila_0/ila_0.xci
@@ -72,6 +72,9 @@ set_property used_in_synthesis false [get_files -all c:/Users/Zach/Documents/Gra
 set_property used_in_implementation false [get_files -all c:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/sources_1/ip/ila_0/ila_0_ooc.xdc]
+
+read_ip -quiet C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/sources_1/ip/dds_compiler_0/dds_compiler_0.xci
+set_property used_in_implementation false [get_files -all c:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/sources_1/ip/dds_compiler_0/dds_compiler_0_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

@@ -1,10 +1,10 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4.1 (win64) Build 2117270 Tue Jan 30 15:32:00 MST 2018
--- Date        : Tue Sep 24 18:56:03 2019
+-- Date        : Wed Sep 25 20:14:36 2019
 -- Host        : ZPCX running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/sources_1/bd/proc_system/ip/proc_system_axi_gpio_1_0/proc_system_axi_gpio_1_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top proc_system_axi_gpio_1_0 -prefix
+--               proc_system_axi_gpio_1_0_ proc_system_axi_gpio_1_0_sim_netlist.vhdl
 -- Design      : proc_system_axi_gpio_1_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -33,8 +33,6 @@ entity proc_system_axi_gpio_1_0_GPIO_Core is
     Bus_RNW_reg : in STD_LOGIC;
     \GEN_BKEND_CE_REGISTERS[3].ce_out_i_reg\ : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of proc_system_axi_gpio_1_0_GPIO_Core : entity is "GPIO_Core";
 end proc_system_axi_gpio_1_0_GPIO_Core;
 
 architecture STRUCTURE of proc_system_axi_gpio_1_0_GPIO_Core is
@@ -81,16 +79,16 @@ begin
       Q => reg1(31),
       R => '0'
     );
-\Not_Dual.gpio_Data_Out_reg[0]\: unisim.vcomponents.FDSE
+\Not_Dual.gpio_Data_Out_reg[0]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '1'
+      INIT => '0'
     )
         port map (
       C => s_axi_aclk,
       CE => '1',
       D => \bus2ip_addr_i_reg[2]\,
       Q => \^gpio_io_o\(0),
-      S => rst
+      R => rst
     );
 \Not_Dual.gpio_OE_reg[0]\: unisim.vcomponents.FDSE
     generic map(
@@ -172,8 +170,6 @@ entity proc_system_axi_gpio_1_0_pselect_f is
     ce_expnd_i_3 : out STD_LOGIC;
     \bus2ip_addr_i_reg[3]\ : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of proc_system_axi_gpio_1_0_pselect_f : entity is "pselect_f";
 end proc_system_axi_gpio_1_0_pselect_f;
 
 architecture STRUCTURE of proc_system_axi_gpio_1_0_pselect_f is
@@ -243,8 +239,6 @@ entity proc_system_axi_gpio_1_0_address_decoder is
     ip2bus_wrack_i_D1 : in STD_LOGIC;
     is_write_reg : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of proc_system_axi_gpio_1_0_address_decoder : entity is "address_decoder";
 end proc_system_axi_gpio_1_0_address_decoder;
 
 architecture STRUCTURE of proc_system_axi_gpio_1_0_address_decoder is
@@ -490,8 +484,6 @@ entity proc_system_axi_gpio_1_0_slave_attachment is
     s_axi_araddr : in STD_LOGIC_VECTOR ( 2 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 2 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of proc_system_axi_gpio_1_0_slave_attachment : entity is "slave_attachment";
 end proc_system_axi_gpio_1_0_slave_attachment;
 
 architecture STRUCTURE of proc_system_axi_gpio_1_0_slave_attachment is
@@ -1003,8 +995,6 @@ entity proc_system_axi_gpio_1_0_axi_lite_ipif is
     s_axi_araddr : in STD_LOGIC_VECTOR ( 2 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 2 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of proc_system_axi_gpio_1_0_axi_lite_ipif : entity is "axi_lite_ipif";
 end proc_system_axi_gpio_1_0_axi_lite_ipif;
 
 architecture STRUCTURE of proc_system_axi_gpio_1_0_axi_lite_ipif is
@@ -1085,7 +1075,7 @@ entity proc_system_axi_gpio_1_0_axi_gpio is
   attribute C_ALL_OUTPUTS_2 : integer;
   attribute C_ALL_OUTPUTS_2 of proc_system_axi_gpio_1_0_axi_gpio : entity is 0;
   attribute C_DOUT_DEFAULT : integer;
-  attribute C_DOUT_DEFAULT of proc_system_axi_gpio_1_0_axi_gpio : entity is -1;
+  attribute C_DOUT_DEFAULT of proc_system_axi_gpio_1_0_axi_gpio : entity is 0;
   attribute C_DOUT_DEFAULT_2 : integer;
   attribute C_DOUT_DEFAULT_2 of proc_system_axi_gpio_1_0_axi_gpio : entity is 0;
   attribute C_FAMILY : string;
@@ -1106,8 +1096,6 @@ entity proc_system_axi_gpio_1_0_axi_gpio is
   attribute C_TRI_DEFAULT of proc_system_axi_gpio_1_0_axi_gpio : entity is -1;
   attribute C_TRI_DEFAULT_2 : integer;
   attribute C_TRI_DEFAULT_2 of proc_system_axi_gpio_1_0_axi_gpio : entity is -1;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of proc_system_axi_gpio_1_0_axi_gpio : entity is "axi_gpio";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of proc_system_axi_gpio_1_0_axi_gpio : entity is "yes";
   attribute ip_group : string;
@@ -1145,38 +1133,38 @@ architecture STRUCTURE of proc_system_axi_gpio_1_0_axi_gpio is
   attribute max_fanout of s_axi_aresetn : signal is "10000";
   attribute sigis of s_axi_aresetn : signal is "Rst";
 begin
-  gpio2_io_o(31) <= \<const1>\;
-  gpio2_io_o(30) <= \<const1>\;
-  gpio2_io_o(29) <= \<const1>\;
-  gpio2_io_o(28) <= \<const1>\;
-  gpio2_io_o(27) <= \<const1>\;
-  gpio2_io_o(26) <= \<const1>\;
-  gpio2_io_o(25) <= \<const1>\;
-  gpio2_io_o(24) <= \<const1>\;
-  gpio2_io_o(23) <= \<const1>\;
-  gpio2_io_o(22) <= \<const1>\;
-  gpio2_io_o(21) <= \<const1>\;
-  gpio2_io_o(20) <= \<const1>\;
-  gpio2_io_o(19) <= \<const1>\;
-  gpio2_io_o(18) <= \<const1>\;
-  gpio2_io_o(17) <= \<const1>\;
-  gpio2_io_o(16) <= \<const1>\;
-  gpio2_io_o(15) <= \<const1>\;
-  gpio2_io_o(14) <= \<const1>\;
-  gpio2_io_o(13) <= \<const1>\;
-  gpio2_io_o(12) <= \<const1>\;
-  gpio2_io_o(11) <= \<const1>\;
-  gpio2_io_o(10) <= \<const1>\;
-  gpio2_io_o(9) <= \<const1>\;
-  gpio2_io_o(8) <= \<const1>\;
-  gpio2_io_o(7) <= \<const1>\;
-  gpio2_io_o(6) <= \<const1>\;
-  gpio2_io_o(5) <= \<const1>\;
-  gpio2_io_o(4) <= \<const1>\;
-  gpio2_io_o(3) <= \<const1>\;
-  gpio2_io_o(2) <= \<const1>\;
-  gpio2_io_o(1) <= \<const1>\;
-  gpio2_io_o(0) <= \<const1>\;
+  gpio2_io_o(31) <= \<const0>\;
+  gpio2_io_o(30) <= \<const0>\;
+  gpio2_io_o(29) <= \<const0>\;
+  gpio2_io_o(28) <= \<const0>\;
+  gpio2_io_o(27) <= \<const0>\;
+  gpio2_io_o(26) <= \<const0>\;
+  gpio2_io_o(25) <= \<const0>\;
+  gpio2_io_o(24) <= \<const0>\;
+  gpio2_io_o(23) <= \<const0>\;
+  gpio2_io_o(22) <= \<const0>\;
+  gpio2_io_o(21) <= \<const0>\;
+  gpio2_io_o(20) <= \<const0>\;
+  gpio2_io_o(19) <= \<const0>\;
+  gpio2_io_o(18) <= \<const0>\;
+  gpio2_io_o(17) <= \<const0>\;
+  gpio2_io_o(16) <= \<const0>\;
+  gpio2_io_o(15) <= \<const0>\;
+  gpio2_io_o(14) <= \<const0>\;
+  gpio2_io_o(13) <= \<const0>\;
+  gpio2_io_o(12) <= \<const0>\;
+  gpio2_io_o(11) <= \<const0>\;
+  gpio2_io_o(10) <= \<const0>\;
+  gpio2_io_o(9) <= \<const0>\;
+  gpio2_io_o(8) <= \<const0>\;
+  gpio2_io_o(7) <= \<const0>\;
+  gpio2_io_o(6) <= \<const0>\;
+  gpio2_io_o(5) <= \<const0>\;
+  gpio2_io_o(4) <= \<const0>\;
+  gpio2_io_o(3) <= \<const0>\;
+  gpio2_io_o(2) <= \<const0>\;
+  gpio2_io_o(1) <= \<const0>\;
+  gpio2_io_o(0) <= \<const0>\;
   gpio2_io_t(31) <= \<const1>\;
   gpio2_io_t(30) <= \<const1>\;
   gpio2_io_t(29) <= \<const1>\;
@@ -1400,7 +1388,7 @@ architecture STRUCTURE of proc_system_axi_gpio_1_0 is
   attribute C_ALL_OUTPUTS_2 : integer;
   attribute C_ALL_OUTPUTS_2 of U0 : label is 0;
   attribute C_DOUT_DEFAULT : integer;
-  attribute C_DOUT_DEFAULT of U0 : label is -1;
+  attribute C_DOUT_DEFAULT of U0 : label is 0;
   attribute C_DOUT_DEFAULT_2 : integer;
   attribute C_DOUT_DEFAULT_2 of U0 : label is 0;
   attribute C_FAMILY : string;

@@ -123,11 +123,11 @@ ARCHITECTURE proc_system_axi_uartlite_0_0_arch OF proc_system_axi_uartlite_0_0 I
     );
   END COMPONENT axi_uartlite;
   ATTRIBUTE X_CORE_INFO : STRING;
-  ATTRIBUTE X_CORE_INFO OF proc_system_axi_uartlite_0_0_arch: ARCHITECTURE IS "axi_uartlite,Vivado 2017.4";
+  ATTRIBUTE X_CORE_INFO OF proc_system_axi_uartlite_0_0_arch: ARCHITECTURE IS "axi_uartlite,Vivado 2017.4.1";
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF proc_system_axi_uartlite_0_0_arch : ARCHITECTURE IS "proc_system_axi_uartlite_0_0,axi_uartlite,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF proc_system_axi_uartlite_0_0_arch: ARCHITECTURE IS "proc_system_axi_uartlite_0_0,axi_uartlite,{x_ipProduct=Vivado 2017.4,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_uartlite,x_ipVersion=2.0,x_ipCoreRevision=19,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_FAMILY=zynq,C_S_AXI_ACLK_FREQ_HZ=100000000,C_S_AXI_ADDR_WIDTH=4,C_S_AXI_DATA_WIDTH=32,C_BAUDRATE=115200,C_DATA_BITS=8,C_USE_PARITY=0,C_ODD_PARITY=0}";
+  ATTRIBUTE CORE_GENERATION_INFO OF proc_system_axi_uartlite_0_0_arch: ARCHITECTURE IS "proc_system_axi_uartlite_0_0,axi_uartlite,{x_ipProduct=Vivado 2017.4.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_uartlite,x_ipVersion=2.0,x_ipCoreRevision=19,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_FAMILY=zynq,C_S_AXI_ACLK_FREQ_HZ=100000000,C_S_AXI_ADDR_WIDTH=4,C_S_AXI_DATA_WIDTH=32,C_BAUDRATE=115200,C_DATA_BITS=8,C_USE_PARITY=0,C_ODD_PARITY=0}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
   ATTRIBUTE X_INTERFACE_INFO OF tx: SIGNAL IS "xilinx.com:interface:uart:1.0 UART TxD";

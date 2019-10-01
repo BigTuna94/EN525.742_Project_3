@@ -1,15 +1,18 @@
  %% Setup
  %% Enter the filenames of the VHDL simulation file, and the recorded file full of ILA data here
 %sim_name = 'sim_100k_0x20c49.txt';
-sim_name = "C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sim\sim_1\behav\xsim\dds_output.txt";
-rec_name = 'file_100k_0x20c49.csv';
+%sim_name = "C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sim\sim_1\behav\xsim\dds_output.txt";
+sim_name = "dds_output.txt";
+% rec_name = 'file_100k_0x20c49.csv';
+%rec_name = "50KHz.csv";
+rec_name = "100KHz.csv";
 %'file_100k_0x20c49.csv'
 %% Enter the phase increment which you used in your design.  The matlab simulation will use the same
 % phase increment when comparing your results with the expected behavior
 sig_pinc = 67109; %hex2dec('20c49');
 
 %% Define our simulation parameters
-N = 134217728;
+N = 16000;
 fs = 100e6;
 T = 1/fs;
 n = [0:1:N-1];
@@ -67,7 +70,11 @@ n_sim = length(simulated_sig_gen);
 fid = fopen(rec_name);
 % 1                2                3      4                   5                  6                7                        
 %Sample in Buffer,Sample in Window,TRIGGER,debug_signals[15:0],sig_gen_pinc[31:0],sample_out[15:0],next_dac_sample_slv,sig_proc_resetn_slv
-C = textscan(fid, '%d%d%d%s%s%s%d%d', 'headerlines', 1, 'delimiter', ',');
+%C = textscan(fid, '%d%d%d%s%s%s%d%d', 'headerlines', 1, 'delimiter', ',');
+
+%Sample in Buffer,Sample in Window,TRIGGER,spi_rtl_sck_o,spi_rtl_io0_o,spi_rtl_io1_o,spi_rtl_ss_o_0_0,adc_ready,<const0>_1,<const0>_2,<const0>_3,dds_m_tvalid_out,dds_m_reset_out,<const0>_4,<const0>_5,<const0>_6,<const0>_7,<const0>_8,<const0>,ila_probe2[15:0],ila_probe3[15:0]
+C = textscan(fid, '%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%f%f', 'headerlines', 1, 'delimiter', ',');
+
 fclose(fid);
 sig = C;
 
@@ -77,18 +84,21 @@ trigger = C{3};
 % note here that we saved the value of sample out in binary, simply because
 % the ILA was setup to display it in binary.  If you change your ILA
 % display to display it as a signed integer, these should be in decimal
-sample_out = bin2dec(C{6}); %convert the binary string to decimal (does it as unsigned)
-reset = C{7};
+%sample_out = bin2dec(C{6}); %convert the binary string to decimal (does it as unsigned)
+sample_out = C{20}; 
+%reset = C{7};
+reset = C{13};
 % next two lines fix the fact that bin2dec treats binary strings as
 % unsigned.  
-inds = find(sample_out >= 2^15);  
-sample_out(inds) = sample_out(inds) - 2^16;
+%inds = find(sample_out >= 2^15);  
+%sample_out(inds) = sample_out(inds) - 2^16;
 
 % Note the use of a magic number here.  This is a cheap way to line things
 % up.  We manually looked at the file and figured out where the first DDS
 % sample came out (clock 29) and then hard-coded it.  Another way would be
 % to analyze the file for your trigger and add some fixed offset.
-recorded_sig_gen = sample_out(29:end);
+%recorded_sig_gen = sample_out(29:end);
+recorded_sig_gen = sample_out(1:end);
 n_rec = length(recorded_sig_gen);
 
 %% Compare with saved data

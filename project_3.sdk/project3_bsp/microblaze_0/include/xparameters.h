@@ -538,29 +538,23 @@
 
 /******************************************************************/
 
-
-/* Definitions for peripheral DDS_COMPILER_0 */
-
-
-/******************************************************************/
-
 /* Definitions for driver GPIO */
 #define XPAR_XGPIO_NUM_INSTANCES 1
 
-/* Definitions for peripheral AXI_GPIO_0 */
-#define XPAR_AXI_GPIO_0_BASEADDR 0x40000000
-#define XPAR_AXI_GPIO_0_HIGHADDR 0x4000FFFF
-#define XPAR_AXI_GPIO_0_DEVICE_ID 0
-#define XPAR_AXI_GPIO_0_INTERRUPT_PRESENT 0
-#define XPAR_AXI_GPIO_0_IS_DUAL 0
+/* Definitions for peripheral AXI_GPIO_DDS_RESETN */
+#define XPAR_AXI_GPIO_DDS_RESETN_BASEADDR 0x40000000
+#define XPAR_AXI_GPIO_DDS_RESETN_HIGHADDR 0x4000FFFF
+#define XPAR_AXI_GPIO_DDS_RESETN_DEVICE_ID 0
+#define XPAR_AXI_GPIO_DDS_RESETN_INTERRUPT_PRESENT 0
+#define XPAR_AXI_GPIO_DDS_RESETN_IS_DUAL 0
 
 
 /******************************************************************/
 
-/* Canonical definitions for peripheral AXI_GPIO_0 */
+/* Canonical definitions for peripheral AXI_GPIO_DDS_RESETN */
 #define XPAR_GPIO_0_BASEADDR 0x40000000
 #define XPAR_GPIO_0_HIGHADDR 0x4000FFFF
-#define XPAR_GPIO_0_DEVICE_ID XPAR_AXI_GPIO_0_DEVICE_ID
+#define XPAR_GPIO_0_DEVICE_ID XPAR_AXI_GPIO_DDS_RESETN_DEVICE_ID
 #define XPAR_GPIO_0_INTERRUPT_PRESENT 0
 #define XPAR_GPIO_0_IS_DUAL 0
 

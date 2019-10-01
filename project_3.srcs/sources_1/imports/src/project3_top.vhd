@@ -37,7 +37,6 @@ entity project3_top is Port (
     uart_tx   : out std_logic;  -- PMOD UART TX
     uart_rx   : in std_logic;   -- PMOR UART RX
     SW0       : in std_logic;   -- for reset
-    SW1       : in std_logic;   -- for dds_reset
     GCLK      : in std_logic;    -- for system clock
     LEDS      : out std_logic_vector(7 downto 0)
   );
@@ -69,13 +68,19 @@ architecture Behavioral of project3_top is
       spi_rtl_ss_i : in STD_LOGIC_VECTOR ( 0 to 0 );
       spi_rtl_ss_o : out STD_LOGIC_VECTOR ( 0 to 0 );
       spi_rtl_ss_t : out STD_LOGIC;
-      DDS_M_AXIS_DATA_0_tdata : out STD_LOGIC_VECTOR ( 15 downto 0 );
-      DDS_M_AXIS_DATA_0_tvalid : out STD_LOGIC;
+--      DDS_M_AXIS_DATA_0_tdata : out STD_LOGIC_VECTOR ( 15 downto 0 );
+--      DDS_M_AXIS_DATA_0_tvalid : out STD_LOGIC;
+      M0_AXIS_0_tdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+      M0_AXIS_0_tlast : out STD_LOGIC;
+      M0_AXIS_0_tready : in STD_LOGIC;
+      M0_AXIS_0_tvalid : out STD_LOGIC;
       Clk : in STD_LOGIC;
       reset_rtl : in STD_LOGIC;
       spi_gpio_resetn : in STD_LOGIC;
-      dds_reset : in STD_LOGIC;
-      dds_s_tvalid : in STD_LOGIC
+--      dds_s_tvalid : in STD_LOGIC;
+--      dds_aresetn : in STD_LOGIC;
+      gpio_dds_reset : out STD_LOGIC
+
     );
   end component proc_system;
   
@@ -86,6 +91,16 @@ architecture Behavioral of project3_top is
       IO : inout STD_LOGIC
     );
   end component IOBUF;
+  
+  component dds_compiler_0 is PORT (
+      aclk : IN STD_LOGIC;
+      aresetn : IN STD_LOGIC;
+      s_axis_config_tvalid : IN STD_LOGIC;
+      s_axis_config_tdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+      m_axis_data_tvalid : OUT STD_LOGIC;
+      m_axis_data_tdata : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+    );
+  END COMPONENT;
     
   signal spi_rtl_io0_i : STD_LOGIC;
   signal spi_rtl_io0_o : STD_LOGIC;
@@ -116,7 +131,14 @@ architecture Behavioral of project3_top is
   signal uninitialized : std_logic;
   signal buffered_adc_ready : std_logic := '1';
 
-  signal dds_reset : std_logic;
+  -- signal dds_tvalid : std_logic;
+  signal dds_resetn: std_logic;
+  
+  signal dds_m_reset_out : std_logic;
+  signal dds_m_tdata_out : std_logic_vector(31 downto 0);
+  signal dds_m_tlast_out : std_logic;
+  signal dds_m_tready_in : std_logic;
+  signal dds_m_tvalid_out : std_logic;
 
   signal ila_probe0 : STD_LOGIC_VECTOR(7 DOWNTO 0); 
   signal ila_probe1 : STD_LOGIC_VECTOR(7 DOWNTO 0); 
@@ -151,11 +173,27 @@ begin
       end if; 
     end process;
     
+    dds_comp_gen : component dds_compiler_0 port map (
+        aclk => Clk,
+        aresetn => dds_resetn,
+        s_axis_config_tvalid => '1', 
+        s_axis_config_tdata => dds_m_tdata_out,
+        m_axis_data_tvalid => dds_m_tvalid_out, 
+        m_axis_data_tdata => audio_out_word(15 downto 0)
+    );
+    
+    dds_m_tready_in <= dds_m_tvalid_out;
+    dds_resetn <= not dds_m_reset_out;
+    
     proc_system_gen: component proc_system port map (
         Clk => Clk,
-        dds_reset => dds_reset,
-        dds_s_tvalid => '1',
-        DDS_M_AXIS_DATA_0_tdata(15 downto 0) => audio_out_word,
+--        dds_s_tvalid => '1',
+--        DDS_M_AXIS_DATA_0_tdata(15 downto 0) => audio_out_word(15 downto 0),
+--        DDS_M_AXIS_DATA_0_tvalid => dds_tvalid,
+        M0_AXIS_0_tdata => dds_m_tdata_out,
+        M0_AXIS_0_tlast => dds_m_tlast_out,
+        M0_AXIS_0_tready => dds_m_tready_in,
+        -- M0_AXIS_0_tvalid => dds_m_tvalid_out,
         spi_gpio_resetn => not_reset,
         reset_rtl => reset,
         uart_rtl_rxd => uart_rx,
@@ -171,7 +209,9 @@ begin
         spi_rtl_sck_t => spi_rtl_sck_t,
         spi_rtl_ss_i(0) => spi_rtl_ss_i_0(0),
         spi_rtl_ss_o(0) => spi_rtl_ss_o_0(0),
-        spi_rtl_ss_t => spi_rtl_ss_t
+        spi_rtl_ss_t => spi_rtl_ss_t,
+        gpio_dds_reset => dds_m_reset_out
+--        dds_aresetn => dds_resetn
     );
     
     spi_rtl_io0_iobuf: component IOBUF
@@ -210,7 +250,6 @@ begin
     AC_ADR0 <= spi_rtl_ss_io_0(0);
     
     reset <= SW0;
-    dds_reset <= SW1;
     clk <= GCLK;
     
     -- ILA Hookup
@@ -221,10 +260,12 @@ begin
     ila_probe0(4) <= adc_ready;
     ila_probe0(7 downto 5) <= (others => '0');
     
-    ila_probe1(7 downto 0) <= (others => '0');
+    ila_probe1(7 downto 2) <= (others => '0');
+    ila_probe1(1) <= dds_m_reset_out;
+    ila_probe1(0) <= dds_m_tvalid_out;
     
-    ila_probe2 <= audio_out_word_sin_test(15 downto 0);
-    ila_probe3 <= audio_out_word_sin_test(31 downto 16);
+    ila_probe2 <= audio_out_word(15 downto 0);
+    ila_probe3 <= (others => '0');
 
     ila_inst: component ila_0 port map (
         clk => clk,

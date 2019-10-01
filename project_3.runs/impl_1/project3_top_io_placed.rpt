@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2017.4.1 (win64) Build 2117270 Tue Jan 30 15:32:00 MST 2018
-| Date                      : Tue Sep 24 18:58:42 2019
+| Date                      : Mon Sep 30 20:07:29 2019
 | Host                      : ZPCX running 64-bit major release  (build 9200)
 | Command                   : report_io -file project3_top_io_placed.rpt
 | Design                    : project3_top
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|            21 |
+|            20 |
 +---------------+
 
 
@@ -232,7 +232,7 @@ Table of Contents
 | G19        |             | High Range | IO_L20P_T3_AD6P_35      | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | G20        |             | High Range | IO_L22P_T3_AD7P_35      | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | G21        |             | High Range | IO_L22N_T3_AD7N_35      | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| G22        | SW1         | High Range | IO_L24N_T3_AD15N_35     | INPUT       | LVCMOS18    |      35 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| G22        |             | High Range | IO_L24N_T3_AD15N_35     | User IO     |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | H1         |             |            | VCCO_DDR_502            | VCCO        |             |         |            |      |                     |                      |   any** |            |           |          |      |                  |              |                   |              |
 | H2         |             |            | PS_DDR_DQS_P1_502       | PSS IO      |             |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | H3         |             |            | PS_DDR_DM1_502          | PSS IO      |             |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |

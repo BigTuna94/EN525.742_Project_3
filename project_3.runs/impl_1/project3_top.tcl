@@ -65,6 +65,8 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
+  set_param tcl.collectionResultDisplayLimit 0
+  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7z020clg484-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
@@ -78,7 +80,11 @@ set rc [catch {
   set_param project.isImplRun true
   add_files C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/sources_1/bd/proc_system/proc_system.bd
   read_ip -quiet C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/sources_1/ip/ila_0/ila_0.xci
+  read_ip -quiet C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/sources_1/ip/dds_compiler_0/dds_compiler_0.xci
   set_param project.isImplRun false
+  add_files C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.sdk/project3/Debug/project3.elf
+  set_property SCOPED_TO_REF proc_system [get_files -all C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.sdk/project3/Debug/project3.elf]
+  set_property SCOPED_TO_CELLS microblaze_0 [get_files -all C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.sdk/project3/Debug/project3.elf]
   read_xdc C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/constrs_1/imports/new/project1_zedboard.xdc
   read_xdc C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/constrs_1/imports/Downloads/zedboard_master_XDC_RevC_D_v3.xdc
   set_param project.isImplRun true

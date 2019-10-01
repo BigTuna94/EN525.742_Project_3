@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.4.1 (win64) Build 2117270 Tue Jan 30 15:32:00 MST 2018
---Date        : Tue Sep 24 18:55:20 2019
+--Date        : Mon Sep 30 19:32:46 2019
 --Host        : ZPCX running 64-bit major release  (build 9200)
 --Command     : generate_target proc_system_wrapper.bd
 --Design      : proc_system_wrapper
@@ -14,10 +14,11 @@ use UNISIM.VCOMPONENTS.ALL;
 entity proc_system_wrapper is
   port (
     Clk : in STD_LOGIC;
-    DDS_M_AXIS_DATA_0_tdata : out STD_LOGIC_VECTOR ( 15 downto 0 );
-    DDS_M_AXIS_DATA_0_tvalid : out STD_LOGIC;
-    dds_reset : in STD_LOGIC;
-    dds_s_tvalid : in STD_LOGIC;
+    M0_AXIS_0_tdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    M0_AXIS_0_tlast : out STD_LOGIC;
+    M0_AXIS_0_tready : in STD_LOGIC;
+    M0_AXIS_0_tvalid : out STD_LOGIC;
+    gpio_dds_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
     reset_rtl : in STD_LOGIC;
     spi_gpio_resetn : in STD_LOGIC;
     spi_rtl_io0_io : inout STD_LOGIC;
@@ -46,13 +47,14 @@ architecture STRUCTURE of proc_system_wrapper is
     spi_rtl_ss_i : in STD_LOGIC_VECTOR ( 0 to 0 );
     spi_rtl_ss_o : out STD_LOGIC_VECTOR ( 0 to 0 );
     spi_rtl_ss_t : out STD_LOGIC;
-    DDS_M_AXIS_DATA_0_tdata : out STD_LOGIC_VECTOR ( 15 downto 0 );
-    DDS_M_AXIS_DATA_0_tvalid : out STD_LOGIC;
+    M0_AXIS_0_tdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    M0_AXIS_0_tlast : out STD_LOGIC;
+    M0_AXIS_0_tready : in STD_LOGIC;
+    M0_AXIS_0_tvalid : out STD_LOGIC;
     Clk : in STD_LOGIC;
     reset_rtl : in STD_LOGIC;
     spi_gpio_resetn : in STD_LOGIC;
-    dds_reset : in STD_LOGIC;
-    dds_s_tvalid : in STD_LOGIC
+    gpio_dds_reset : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component proc_system;
   component IOBUF is
@@ -80,10 +82,11 @@ begin
 proc_system_i: component proc_system
      port map (
       Clk => Clk,
-      DDS_M_AXIS_DATA_0_tdata(15 downto 0) => DDS_M_AXIS_DATA_0_tdata(15 downto 0),
-      DDS_M_AXIS_DATA_0_tvalid => DDS_M_AXIS_DATA_0_tvalid,
-      dds_reset => dds_reset,
-      dds_s_tvalid => dds_s_tvalid,
+      M0_AXIS_0_tdata(31 downto 0) => M0_AXIS_0_tdata(31 downto 0),
+      M0_AXIS_0_tlast => M0_AXIS_0_tlast,
+      M0_AXIS_0_tready => M0_AXIS_0_tready,
+      M0_AXIS_0_tvalid => M0_AXIS_0_tvalid,
+      gpio_dds_reset(0) => gpio_dds_reset(0),
       reset_rtl => reset_rtl,
       spi_gpio_resetn => spi_gpio_resetn,
       spi_rtl_io0_i => spi_rtl_io0_i,

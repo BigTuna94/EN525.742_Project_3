@@ -1,123 +1,38 @@
-20:36:06 **** Incremental Build of configuration Release for project project2 ****
+19:44:49 **** Incremental Build of configuration Debug for project project3 ****
 make all 
 make: Nothing to be done for `all'.
-20:07:09 **** Clean-only build of configuration Release for project project3 ****
+19:44:59 **** Incremental Build of configuration Debug for project project3 ****
+make all 
+make: Nothing to be done for `all'.
+19:44:59 **** Incremental Build of configuration Debug for project project3_bsp_xgpio_example_1 ****
+make all 
+make: Nothing to be done for `all'.
+19:46:37 **** Incremental Build of configuration Debug for project project3 ****
+make all 
+make: Nothing to be done for `all'.
+19:46:38 **** Incremental Build of configuration Debug for project project3_bsp_xgpio_example_1 ****
+make all 
+make: Nothing to be done for `all'.
+19:46:56 **** Clean-only build of configuration Debug for project project3 ****
 make clean 
-rm -rf  ./src/audio_fifo.o ./src/codec.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o  ./src/audio_fifo.d ./src/codec.d ./src/main.d ./src/platform.d ./src/serial_audio_lib.d  project2.elf.size  project2.elf
+rm -rf  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o  ./src/codec.d ./src/dds_phase_accum.d ./src/main.d ./src/platform.d ./src/serial_audio_lib.d  project3.elf.size  project3.elf
+rm: cannot remove `project3.elf': Permission denied
+make: [clean] Error 1 (ignored)
 ' '
-20:07:09 **** Build of configuration Release for project project3 ****
-make all 
-'Building file: ../src/audio_fifo.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/audio_fifo.o" -I../../project2_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/audio_fifo.d" -MT"src/audio_fifo.o" -o "src/audio_fifo.o" "../src/audio_fifo.c"
-'Finished building: ../src/audio_fifo.c'
+19:46:56 **** Clean-only build of configuration Debug for project project3_bsp_xgpio_example_1 ****
+make clean 
+rm -rf  ./src/xgpio_example.o  ./src/xgpio_example.d  project3_bsp_xgpio_example_1.elf.size  project3_bsp_xgpio_example_1.elf
 ' '
-'Building file: ../src/codec.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/codec.o" -I../../project2_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/codec.d" -MT"src/codec.o" -o "src/codec.o" "../src/codec.c"
-'Finished building: ../src/codec.c'
-' '
-'Building file: ../src/main.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -I../../project2_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-'Finished building: ../src/main.c'
-' '
-'Building file: ../src/platform.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/platform.o" -I../../project2_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
-'Finished building: ../src/platform.c'
-' '
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project2_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project2_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/audio_fifo.o ./src/codec.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  32052	   1344	  19572	  52968	   cee8	project3.elf
-'Finished building: project3.elf.size'
-' '
-20:07:27 **** Auto Build of configuration Release for project project3 ****
-make all 
-make: Nothing to be done for `all'.
-20:07:28 **** Build of project project3_bsp ****
-make -k all 
-"Running Make include in microblaze_0/libsrc/bram_v4_2/src"
-make -C microblaze_0/libsrc/bram_v4_2/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS= -O2 -c -mcpu=v10.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
-"Running Make include in microblaze_0/libsrc/cpu_v2_6/src"
-make -C microblaze_0/libsrc/cpu_v2_6/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS= -O2 -c -mcpu=v10.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
-"Running Make include in microblaze_0/libsrc/gpio_v4_3/src"
-make -C microblaze_0/libsrc/gpio_v4_3/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS= -O2 -c -mcpu=v10.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
-"Running Make include in microblaze_0/libsrc/spi_v4_3/src"
-make -C microblaze_0/libsrc/spi_v4_3/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS= -O2 -c -mcpu=v10.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
-"Running Make include in microblaze_0/libsrc/standalone_v6_5/src"
-make -C microblaze_0/libsrc/standalone_v6_5/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS= -O2 -c -mcpu=v10.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
-"Running Make include in microblaze_0/libsrc/uartlite_v3_2/src"
-make -C microblaze_0/libsrc/uartlite_v3_2/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS= -O2 -c -mcpu=v10.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
-"Running Make libs in microblaze_0/libsrc/bram_v4_2/src"
-make -C microblaze_0/libsrc/bram_v4_2/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS= -O2 -c -mcpu=v10.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
-"Compiling bram"
-"Running Make libs in microblaze_0/libsrc/cpu_v2_6/src"
-make -C microblaze_0/libsrc/cpu_v2_6/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS= -O2 -c -mcpu=v10.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
-"Compiling cpu"
-"Running Make libs in microblaze_0/libsrc/gpio_v4_3/src"
-make -C microblaze_0/libsrc/gpio_v4_3/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS= -O2 -c -mcpu=v10.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
-"Compiling gpio"
-"Running Make libs in microblaze_0/libsrc/spi_v4_3/src"
-make -C microblaze_0/libsrc/spi_v4_3/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS= -O2 -c -mcpu=v10.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
-"Compiling spi"
-"Running Make libs in microblaze_0/libsrc/standalone_v6_5/src"
-make -C microblaze_0/libsrc/standalone_v6_5/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS= -O2 -c -mcpu=v10.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
-"Compiling standalone";
-"Running Make libs in microblaze_0/libsrc/uartlite_v3_2/src"
-make -C microblaze_0/libsrc/uartlite_v3_2/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS= -O2 -c -mcpu=v10.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
-"Compiling uartlite"
-'Finished building libraries'
-20:07:33 **** Auto Build of configuration Release for project project3 ****
-make all 
-'Building file: ../src/audio_fifo.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/audio_fifo.o" -I../../project2_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/audio_fifo.d" -MT"src/audio_fifo.o" -o "src/audio_fifo.o" "../src/audio_fifo.c"
-'Finished building: ../src/audio_fifo.c'
-' '
-'Building file: ../src/codec.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/codec.o" -I../../project2_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/codec.d" -MT"src/codec.o" -o "src/codec.o" "../src/codec.c"
-'Finished building: ../src/codec.c'
-' '
-'Building file: ../src/main.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/main.o" -I../../project2_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-'Finished building: ../src/main.c'
-' '
-'Building file: ../src/platform.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/platform.o" -I../../project2_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
-'Finished building: ../src/platform.c'
-' '
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project2_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project2_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/audio_fifo.o ./src/codec.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  32052	   1344	  19572	  52968	   cee8	project3.elf
-'Finished building: project3.elf.size'
-' '
-20:10:10 **** Build of project project3_bsp ****
+19:46:56 **** Clean-only build of project project3_bsp ****
+make -k clean 
+make -C microblaze_0/libsrc/bram_v4_2/src -s clean 
+make -C microblaze_0/libsrc/cpu_v2_6/src -s clean 
+make -C microblaze_0/libsrc/gpio_v4_3/src -s clean 
+make -C microblaze_0/libsrc/spi_v4_3/src -s clean 
+make -C microblaze_0/libsrc/standalone_v6_5/src -s clean 
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s clean 
+rm -f microblaze_0/lib/libxil.a
+19:46:56 **** Build of project project3_bsp ****
 make -k all 
 "Running Make include in microblaze_0/libsrc/bram_v4_2/src"
 make -C microblaze_0/libsrc/bram_v4_2/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS= -O2 -c -mcpu=v10.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
@@ -151,1002 +66,45 @@ make -C microblaze_0/libsrc/standalone_v6_5/src -s libs  "SHELL=CMD" "COMPILER=m
 make -C microblaze_0/libsrc/uartlite_v3_2/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS= -O2 -c -mcpu=v10.0 -mlittle-endian -mxl-soft-mul" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
 "Compiling uartlite"
 'Finished building libraries'
-20:10:15 **** Build of configuration Debug for project project3 ****
+19:47:01 **** Build of configuration Debug for project project3 ****
 make all 
-'Building file: ../src/helloworld.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
-'Finished building: ../src/helloworld.c'
-' '
-'Building file: ../src/platform.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
-'Finished building: ../src/platform.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
 'Invoking: MicroBlaze Print Size'
 mb-size project3.elf  |tee "project3.elf.size"
    text	   data	    bss	    dec	    hex	filename
-   2748	    268	   3112	   6128	   17f0	project3.elf
+  45116	   1364	   3208	  49688	   c218	project3.elf
 'Finished building: project3.elf.size'
 ' '
-20:10:16 **** Auto Build of configuration Debug for project project3 ****
+19:47:01 **** Build of configuration Debug for project project3_bsp_xgpio_example_1 ****
+make all 
+'Building file: ../src/xgpio_example.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xgpio_example.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/xgpio_example.d" -MT"src/xgpio_example.o" -o "src/xgpio_example.o" "../src/xgpio_example.c"
+'Finished building: ../src/xgpio_example.c'
+' '
+'Building target: project3_bsp_xgpio_example_1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3_bsp_xgpio_example_1.elf"  ./src/xgpio_example.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project3_bsp_xgpio_example_1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project3_bsp_xgpio_example_1.elf  |tee "project3_bsp_xgpio_example_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   6744	    292	   3132	  10168	   27b8	project3_bsp_xgpio_example_1.elf
+'Finished building: project3_bsp_xgpio_example_1.elf.size'
+' '
+19:47:09 **** Incremental Build of configuration Debug for project project3 ****
 make all 
 make: Nothing to be done for `all'.
-20:10:30 **** Clean-only build of configuration Debug for project project3 ****
-make clean 
-rm -rf  ./src/helloworld.o ./src/platform.o  ./src/helloworld.d ./src/platform.d  project3.elf.size  project3.elf
-' '
-20:10:30 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/platform.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
-'Finished building: ../src/platform.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-c:/xilinx/sdk/2017.4/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/6.2.0/../../../../microblaze-xilinx-elf/lib/le/crtinit.o: In function `_crtinit':
-(.text+0x78): undefined reference to `main'
-collect2.exe: error: ld returned 1 exit status
-make: *** [project3.elf] Error 1
-20:10:51 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/audio_fifo.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/audio_fifo.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/audio_fifo.d" -MT"src/audio_fifo.o" -o "src/audio_fifo.o" "../src/audio_fifo.c"
-'Finished building: ../src/audio_fifo.c'
-' '
-'Building file: ../src/codec.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/codec.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/codec.d" -MT"src/codec.o" -o "src/codec.o" "../src/codec.c"
-'Finished building: ../src/codec.c'
-' '
-'Building file: ../src/main.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-'Finished building: ../src/main.c'
-' '
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/audio_fifo.o ./src/codec.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  33620	   1344	  19572	  54536	   d508	project3.elf
-'Finished building: project3.elf.size'
-' '
-20:11:39 **** Clean-only build of configuration Debug for project project3 ****
-make clean 
-rm -rf  ./src/audio_fifo.o ./src/codec.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o  ./src/audio_fifo.d ./src/codec.d ./src/main.d ./src/platform.d ./src/serial_audio_lib.d  project3.elf.size  project3.elf
-' '
-20:11:39 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/codec.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/codec.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/codec.d" -MT"src/codec.o" -o "src/codec.o" "../src/codec.c"
-'Finished building: ../src/codec.c'
-' '
-'Building file: ../src/main.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-../src/main.c:53:24: fatal error: audio_fifo.h: No such file or directory
- #include "audio_fifo.h"
-                        ^
-compilation terminated.
-make: *** [src/main.o] Error 1
-20:13:50 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/audio_fifo.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/audio_fifo.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/audio_fifo.d" -MT"src/audio_fifo.o" -o "src/audio_fifo.o" "../src/audio_fifo.c"
-'Finished building: ../src/audio_fifo.c'
-' '
-'Building file: ../src/main.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-'Finished building: ../src/main.c'
-' '
-'Building file: ../src/platform.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
-'Finished building: ../src/platform.c'
-' '
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/audio_fifo.o ./src/codec.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  33620	   1344	  19572	  54536	   d508	project3.elf
-'Finished building: project3.elf.size'
-' '
-20:14:07 **** Clean-only build of configuration Debug for project project3 ****
-make clean 
-rm -rf  ./src/audio_fifo.o ./src/codec.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o  ./src/audio_fifo.d ./src/codec.d ./src/main.d ./src/platform.d ./src/serial_audio_lib.d  project3.elf.size  project3.elf
-' '
-20:14:07 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/audio_fifo.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/audio_fifo.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/audio_fifo.d" -MT"src/audio_fifo.o" -o "src/audio_fifo.o" "../src/audio_fifo.c"
-'Finished building: ../src/audio_fifo.c'
-' '
-'Building file: ../src/codec.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/codec.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/codec.d" -MT"src/codec.o" -o "src/codec.o" "../src/codec.c"
-'Finished building: ../src/codec.c'
-' '
-'Building file: ../src/main.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-'Finished building: ../src/main.c'
-' '
-'Building file: ../src/platform.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
-'Finished building: ../src/platform.c'
-' '
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/audio_fifo.o ./src/codec.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  33620	   1344	  19572	  54536	   d508	project3.elf
-'Finished building: project3.elf.size'
-' '
-20:14:17 **** Clean-only build of configuration Debug for project project3 ****
-make clean 
-rm -rf  ./src/audio_fifo.o ./src/codec.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o  ./src/audio_fifo.d ./src/codec.d ./src/main.d ./src/platform.d ./src/serial_audio_lib.d  project3.elf.size  project3.elf
-' '
-20:14:17 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/codec.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/codec.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/codec.d" -MT"src/codec.o" -o "src/codec.o" "../src/codec.c"
-'Finished building: ../src/codec.c'
-' '
-'Building file: ../src/dds_phase_accum.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dds_phase_accum.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dds_phase_accum.d" -MT"src/dds_phase_accum.o" -o "src/dds_phase_accum.o" "../src/dds_phase_accum.c"
-'Finished building: ../src/dds_phase_accum.c'
-' '
-'Building file: ../src/main.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-'Finished building: ../src/main.c'
-' '
-'Building file: ../src/platform.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
-'Finished building: ../src/platform.c'
-' '
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  33620	   1344	  19572	  54536	   d508	project3.elf
-'Finished building: project3.elf.size'
-' '
-20:14:32 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/dds_phase_accum.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dds_phase_accum.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dds_phase_accum.d" -MT"src/dds_phase_accum.o" -o "src/dds_phase_accum.o" "../src/dds_phase_accum.c"
-'Finished building: ../src/dds_phase_accum.c'
-' '
-'Building file: ../src/main.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-'Finished building: ../src/main.c'
-' '
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c: In function 'sin_audio_test':
-../src/serial_audio_lib.c:35:7: warning: implicit declaration of function 'push_to_fifo' [-Wimplicit-function-declaration]
-       push_to_fifo( new_data );
-       ^~~~~~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  33620	   1344	  19572	  54536	   d508	project3.elf
-'Finished building: project3.elf.size'
-' '
-20:14:37 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/dds_phase_accum.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dds_phase_accum.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dds_phase_accum.d" -MT"src/dds_phase_accum.o" -o "src/dds_phase_accum.o" "../src/dds_phase_accum.c"
-'Finished building: ../src/dds_phase_accum.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-./src/serial_audio_lib.o: In function `sin_audio_test':
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/serial_audio_lib.c:35: undefined reference to `push_to_fifo'
-./src/serial_audio_lib.o: In function `dump_audio_to_fifo':
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/serial_audio_lib.c:141: undefined reference to `push_to_fifo'
-collect2.exe: error: ld returned 1 exit status
-make: *** [project3.elf] Error 1
-20:14:45 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/dds_phase_accum.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dds_phase_accum.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dds_phase_accum.d" -MT"src/dds_phase_accum.o" -o "src/dds_phase_accum.o" "../src/dds_phase_accum.c"
-'Finished building: ../src/dds_phase_accum.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-./src/serial_audio_lib.o: In function `sin_audio_test':
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/serial_audio_lib.c:35: undefined reference to `push_to_fifo'
-./src/serial_audio_lib.o: In function `dump_audio_to_fifo':
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/serial_audio_lib.c:141: undefined reference to `push_to_fifo'
-collect2.exe: error: ld returned 1 exit status
-make: *** [project3.elf] Error 1
-20:15:49 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c: In function 'sin_audio_test':
-../src/serial_audio_lib.c:20:2: warning: implicit declaration of function 'set_accum' [-Wimplicit-function-declaration]
-  set_accum(100);
-  ^~~~~~~~~
-../src/serial_audio_lib.c: In function 'dump_audio_to_fifo':
-../src/serial_audio_lib.c:124:4: warning: implicit declaration of function 'push_to_fifo' [-Wimplicit-function-declaration]
-    push_to_fifo(loaded_audio_file[sample]);
-    ^~~~~~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-./src/serial_audio_lib.o: In function `sin_audio_test':
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/serial_audio_lib.c:20: undefined reference to `set_accum'
-./src/serial_audio_lib.o: In function `dump_audio_to_fifo':
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/serial_audio_lib.c:124: undefined reference to `push_to_fifo'
-collect2.exe: error: ld returned 1 exit status
-make: *** [project3.elf] Error 1
-20:16:02 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/dds_phase_accum.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dds_phase_accum.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dds_phase_accum.d" -MT"src/dds_phase_accum.o" -o "src/dds_phase_accum.o" "../src/dds_phase_accum.c"
-'Finished building: ../src/dds_phase_accum.c'
-' '
-'Building file: ../src/main.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-'Finished building: ../src/main.c'
-' '
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c: In function 'sin_audio_test':
-../src/serial_audio_lib.c:20:2: warning: implicit declaration of function 'set_accum' [-Wimplicit-function-declaration]
-  set_accum(100);
-  ^~~~~~~~~
-../src/serial_audio_lib.c: In function 'dump_audio_to_fifo':
-../src/serial_audio_lib.c:124:4: warning: implicit declaration of function 'push_to_fifo' [-Wimplicit-function-declaration]
-    push_to_fifo(loaded_audio_file[sample]);
-    ^~~~~~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-./src/serial_audio_lib.o: In function `sin_audio_test':
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/serial_audio_lib.c:20: undefined reference to `set_accum'
-./src/serial_audio_lib.o: In function `dump_audio_to_fifo':
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/serial_audio_lib.c:124: undefined reference to `push_to_fifo'
-collect2.exe: error: ld returned 1 exit status
-make: *** [project3.elf] Error 1
-20:16:10 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/dds_phase_accum.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dds_phase_accum.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dds_phase_accum.d" -MT"src/dds_phase_accum.o" -o "src/dds_phase_accum.o" "../src/dds_phase_accum.c"
-'Finished building: ../src/dds_phase_accum.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-./src/serial_audio_lib.o: In function `sin_audio_test':
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/serial_audio_lib.c:20: undefined reference to `set_accum'
-./src/serial_audio_lib.o: In function `dump_audio_to_fifo':
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/serial_audio_lib.c:124: undefined reference to `push_to_fifo'
-collect2.exe: error: ld returned 1 exit status
-make: *** [project3.elf] Error 1
-20:16:11 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c: In function 'dump_audio_to_fifo':
-../src/serial_audio_lib.c:124:4: warning: implicit declaration of function 'push_to_fifo' [-Wimplicit-function-declaration]
-    push_to_fifo(loaded_audio_file[sample]);
-    ^~~~~~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-./src/serial_audio_lib.o: In function `dump_audio_to_fifo':
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/serial_audio_lib.c:124: undefined reference to `push_to_fifo'
-collect2.exe: error: ld returned 1 exit status
-make: *** [project3.elf] Error 1
-20:18:27 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c: In function 'dump_audio_to_fifo':
-../src/serial_audio_lib.c:125:4: warning: implicit declaration of function 'push_to_fifo' [-Wimplicit-function-declaration]
-    push_to_fifo(loaded_audio_file[sample]);
-    ^~~~~~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-./src/serial_audio_lib.o: In function `dump_audio_to_fifo':
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/serial_audio_lib.c:125: undefined reference to `push_to_fifo'
-collect2.exe: error: ld returned 1 exit status
-make: *** [project3.elf] Error 1
-20:19:05 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c: In function 'get_option':
-../src/serial_audio_lib.c:47:13: error: expected expression before ';' token
-    choice = ; break;
-             ^
-../src/serial_audio_lib.c:49:13: error: expected expression before ';' token
-    choice = ; break;
-             ^
-../src/serial_audio_lib.c:51:13: error: expected expression before ';' token
-    choice = ; break;
-             ^
-../src/serial_audio_lib.c: In function 'dump_audio_to_fifo':
-../src/serial_audio_lib.c:124:4: warning: implicit declaration of function 'push_to_fifo' [-Wimplicit-function-declaration]
-    push_to_fifo(loaded_audio_file[sample]);
-    ^~~~~~~~~~~~
-make: *** [src/serial_audio_lib.o] Error 1
-20:19:08 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c: In function 'get_option':
-../src/serial_audio_lib.c:45:13: error: expected expression before ';' token
-    choice = ; break;
-             ^
-../src/serial_audio_lib.c:47:13: error: expected expression before ';' token
-    choice = ; break;
-             ^
-../src/serial_audio_lib.c:49:13: error: expected expression before ';' token
-    choice = ; break;
-             ^
-../src/serial_audio_lib.c:51:13: error: expected expression before ';' token
-    choice = ; break;
-             ^
-../src/serial_audio_lib.c: In function 'dump_audio_to_fifo':
-../src/serial_audio_lib.c:124:4: warning: implicit declaration of function 'push_to_fifo' [-Wimplicit-function-declaration]
-    push_to_fifo(loaded_audio_file[sample]);
-    ^~~~~~~~~~~~
-make: *** [src/serial_audio_lib.o] Error 1
-20:19:52 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c: In function 'get_option':
-../src/serial_audio_lib.c:45:13: warning: implicit declaration of function 'inc_freq' [-Wimplicit-function-declaration]
-    choice = inc_freq(100); break;
-             ^~~~~~~~
-../src/serial_audio_lib.c:49:13: warning: implicit declaration of function 'dec_freq' [-Wimplicit-function-declaration]
-    choice = dec_freq(100); break;
-             ^~~~~~~~
-../src/serial_audio_lib.c: In function 'dump_audio_to_fifo':
-../src/serial_audio_lib.c:124:4: warning: implicit declaration of function 'push_to_fifo' [-Wimplicit-function-declaration]
-    push_to_fifo(loaded_audio_file[sample]);
-    ^~~~~~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-./src/serial_audio_lib.o: In function `get_option':
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/serial_audio_lib.c:45: undefined reference to `inc_freq'
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/serial_audio_lib.c:47: undefined reference to `inc_freq'
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/serial_audio_lib.c:49: undefined reference to `dec_freq'
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/serial_audio_lib.c:51: undefined reference to `dec_freq'
-./src/serial_audio_lib.o: In function `dump_audio_to_fifo':
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/serial_audio_lib.c:124: undefined reference to `push_to_fifo'
-collect2.exe: error: ld returned 1 exit status
-make: *** [project3.elf] Error 1
-20:20:46 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c: In function 'get_option':
-../src/serial_audio_lib.c:42:13: warning: implicit declaration of function 'inc_freq' [-Wimplicit-function-declaration]
-    choice = inc_freq(100); break;
-             ^~~~~~~~
-../src/serial_audio_lib.c:46:13: warning: implicit declaration of function 'dec_freq' [-Wimplicit-function-declaration]
-    choice = dec_freq(100); break;
-             ^~~~~~~~
-At top level:
-../src/serial_audio_lib.c:55:17: warning: 'bytes4_to_32bits' defined but not used [-Wunused-function]
- static uint32_t bytes4_to_32bits (uint8_t *bytes) {
-                 ^~~~~~~~~~~~~~~~
-../src/serial_audio_lib.c:12:17: warning: 'dds_inc_word' defined but not used [-Wunused-variable]
- static uint32_t dds_inc_word;
-                 ^~~~~~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-./src/main.o: In function `main':
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/main.c:93: undefined reference to `load_new_file'
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/main.c:96: undefined reference to `play_loaded_file'
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/main.c:99: undefined reference to `play_loaded_file_loop'
-./src/serial_audio_lib.o: In function `get_option':
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/serial_audio_lib.c:42: undefined reference to `inc_freq'
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/serial_audio_lib.c:44: undefined reference to `inc_freq'
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/serial_audio_lib.c:46: undefined reference to `dec_freq'
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/serial_audio_lib.c:48: undefined reference to `dec_freq'
-collect2.exe: error: ld returned 1 exit status
-make: *** [project3.elf] Error 1
-20:20:55 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c: In function 'get_option':
-../src/serial_audio_lib.c:42:13: warning: implicit declaration of function 'inc_freq' [-Wimplicit-function-declaration]
-    choice = inc_freq(100); break;
-             ^~~~~~~~
-../src/serial_audio_lib.c:46:13: warning: implicit declaration of function 'dec_freq' [-Wimplicit-function-declaration]
-    choice = dec_freq(100); break;
-             ^~~~~~~~
-At top level:
-../src/serial_audio_lib.c:55:17: warning: 'bytes4_to_32bits' defined but not used [-Wunused-function]
- static uint32_t bytes4_to_32bits (uint8_t *bytes) {
-                 ^~~~~~~~~~~~~~~~
-../src/serial_audio_lib.c:13:17: warning: 'curr_freq' defined but not used [-Wunused-variable]
- static uint32_t curr_freq;
-                 ^~~~~~~~~
-../src/serial_audio_lib.c:12:17: warning: 'dds_inc_word' defined but not used [-Wunused-variable]
- static uint32_t dds_inc_word;
-                 ^~~~~~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-./src/main.o: In function `main':
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/main.c:93: undefined reference to `load_new_file'
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/main.c:96: undefined reference to `play_loaded_file'
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/main.c:99: undefined reference to `play_loaded_file_loop'
-./src/serial_audio_lib.o: In function `get_option':
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/serial_audio_lib.c:42: undefined reference to `inc_freq'
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/serial_audio_lib.c:44: undefined reference to `inc_freq'
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/serial_audio_lib.c:46: undefined reference to `dec_freq'
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/serial_audio_lib.c:48: undefined reference to `dec_freq'
-collect2.exe: error: ld returned 1 exit status
-make: *** [project3.elf] Error 1
-20:21:44 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c: In function 'get_option':
-../src/serial_audio_lib.c:42:13: warning: implicit declaration of function 'inc_freq' [-Wimplicit-function-declaration]
-    choice = inc_freq(100); break;
-             ^~~~~~~~
-../src/serial_audio_lib.c:46:13: warning: implicit declaration of function 'dec_freq' [-Wimplicit-function-declaration]
-    choice = dec_freq(100); break;
-             ^~~~~~~~
-../src/serial_audio_lib.c: At top level:
-../src/serial_audio_lib.c:55:6: warning: conflicting types for 'inc_freq'
- void inc_freq(uint32_t change_hz) {
-      ^~~~~~~~
-../src/serial_audio_lib.c:42:13: note: previous implicit declaration of 'inc_freq' was here
-    choice = inc_freq(100); break;
-             ^~~~~~~~
-../src/serial_audio_lib.c:59:6: warning: conflicting types for 'dec_freq'
- void dec_freq(uint32_t change_hz) {
-      ^~~~~~~~
-../src/serial_audio_lib.c:46:13: note: previous implicit declaration of 'dec_freq' was here
-    choice = dec_freq(100); break;
-             ^~~~~~~~
-../src/serial_audio_lib.c:13:17: warning: 'curr_freq' defined but not used [-Wunused-variable]
- static uint32_t curr_freq;
-                 ^~~~~~~~~
-../src/serial_audio_lib.c:12:17: warning: 'dds_inc_word' defined but not used [-Wunused-variable]
- static uint32_t dds_inc_word;
-                 ^~~~~~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-./src/main.o: In function `main':
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/main.c:93: undefined reference to `load_new_file'
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/main.c:96: undefined reference to `play_loaded_file'
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/main.c:99: undefined reference to `play_loaded_file_loop'
-collect2.exe: error: ld returned 1 exit status
-make: *** [project3.elf] Error 1
-20:22:40 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/main.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-'Finished building: ../src/main.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  31420	   1344	   3180	  35944	   8c68	project3.elf
-'Finished building: project3.elf.size'
-' '
-20:23:02 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c: In function 'handle_choice':
-../src/serial_audio_lib.c:42:13: warning: implicit declaration of function 'inc_freq' [-Wimplicit-function-declaration]
-    choice = inc_freq(100); break;
-             ^~~~~~~~
-../src/serial_audio_lib.c:46:13: warning: implicit declaration of function 'dec_freq' [-Wimplicit-function-declaration]
-    choice = dec_freq(100); break;
-             ^~~~~~~~
-../src/serial_audio_lib.c: At top level:
-../src/serial_audio_lib.c:55:6: warning: conflicting types for 'inc_freq'
- void inc_freq(uint32_t change_hz) {
-      ^~~~~~~~
-../src/serial_audio_lib.c:42:13: note: previous implicit declaration of 'inc_freq' was here
-    choice = inc_freq(100); break;
-             ^~~~~~~~
-../src/serial_audio_lib.c:59:6: warning: conflicting types for 'dec_freq'
- void dec_freq(uint32_t change_hz) {
-      ^~~~~~~~
-../src/serial_audio_lib.c:46:13: note: previous implicit declaration of 'dec_freq' was here
-    choice = dec_freq(100); break;
-             ^~~~~~~~
-../src/serial_audio_lib.c:13:17: warning: 'curr_freq' defined but not used [-Wunused-variable]
- static uint32_t curr_freq;
-                 ^~~~~~~~~
-../src/serial_audio_lib.c:12:17: warning: 'dds_inc_word' defined but not used [-Wunused-variable]
- static uint32_t dds_inc_word;
-                 ^~~~~~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-./src/main.o: In function `main':
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/main.c:91: undefined reference to `get_option'
-collect2.exe: error: ld returned 1 exit status
-make: *** [project3.elf] Error 1
-20:23:07 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/main.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-'Finished building: ../src/main.c'
-' '
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c: In function 'handle_choice':
-../src/serial_audio_lib.c:42:13: warning: implicit declaration of function 'inc_freq' [-Wimplicit-function-declaration]
-    choice = inc_freq(100); break;
-             ^~~~~~~~
-../src/serial_audio_lib.c:46:13: warning: implicit declaration of function 'dec_freq' [-Wimplicit-function-declaration]
-    choice = dec_freq(100); break;
-             ^~~~~~~~
-../src/serial_audio_lib.c: At top level:
-../src/serial_audio_lib.c:55:6: warning: conflicting types for 'inc_freq'
- void inc_freq(uint32_t change_hz) {
-      ^~~~~~~~
-../src/serial_audio_lib.c:42:13: note: previous implicit declaration of 'inc_freq' was here
-    choice = inc_freq(100); break;
-             ^~~~~~~~
-../src/serial_audio_lib.c:59:6: warning: conflicting types for 'dec_freq'
- void dec_freq(uint32_t change_hz) {
-      ^~~~~~~~
-../src/serial_audio_lib.c:46:13: note: previous implicit declaration of 'dec_freq' was here
-    choice = dec_freq(100); break;
-             ^~~~~~~~
-../src/serial_audio_lib.c:13:17: warning: 'curr_freq' defined but not used [-Wunused-variable]
- static uint32_t curr_freq;
-                 ^~~~~~~~~
-../src/serial_audio_lib.c:12:17: warning: 'dds_inc_word' defined but not used [-Wunused-variable]
- static uint32_t dds_inc_word;
-                 ^~~~~~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  31420	   1344	   3180	  35944	   8c68	project3.elf
-'Finished building: project3.elf.size'
-' '
-20:23:23 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/main.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-In file included from ../src/main.c:54:0:
-../src/serial_audio_lib.h:12:1: error: unknown type name 'User_Option'
- User_Option handle_choice(void);
- ^~~~~~~~~~~
-make: *** [src/main.o] Error 1
-20:23:33 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/main.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-'Finished building: ../src/main.c'
-' '
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c:37:1: error: unknown type name 'User_Option'
- User_Option handle_choice(void) {
- ^~~~~~~~~~~
-../src/serial_audio_lib.c:37:13: error: conflicting types for 'handle_choice'
- User_Option handle_choice(void) {
-             ^~~~~~~~~~~~~
-In file included from ../src/serial_audio_lib.c:1:0:
-../src/serial_audio_lib.h:12:6: note: previous declaration of 'handle_choice' was here
- void handle_choice(void);
-      ^~~~~~~~~~~~~
-../src/serial_audio_lib.c: In function 'handle_choice':
-../src/serial_audio_lib.c:38:2: error: unknown type name 'User_Option'
-  User_Option choice = UNKNOWN;
-  ^~~~~~~~~~~
-../src/serial_audio_lib.c:38:23: error: 'UNKNOWN' undeclared (first use in this function)
-  User_Option choice = UNKNOWN;
-                       ^~~~~~~
-../src/serial_audio_lib.c:38:23: note: each undeclared identifier is reported only once for each function it appears in
-../src/serial_audio_lib.c:42:13: warning: implicit declaration of function 'inc_freq' [-Wimplicit-function-declaration]
-    choice = inc_freq(100); break;
-             ^~~~~~~~
-../src/serial_audio_lib.c:46:13: warning: implicit declaration of function 'dec_freq' [-Wimplicit-function-declaration]
-    choice = dec_freq(100); break;
-             ^~~~~~~~
-../src/serial_audio_lib.c: At top level:
-../src/serial_audio_lib.c:55:6: warning: conflicting types for 'inc_freq'
- void inc_freq(uint32_t change_hz) {
-      ^~~~~~~~
-../src/serial_audio_lib.c:42:13: note: previous implicit declaration of 'inc_freq' was here
-    choice = inc_freq(100); break;
-             ^~~~~~~~
-../src/serial_audio_lib.c:59:6: warning: conflicting types for 'dec_freq'
- void dec_freq(uint32_t change_hz) {
-      ^~~~~~~~
-../src/serial_audio_lib.c:46:13: note: previous implicit declaration of 'dec_freq' was here
-    choice = dec_freq(100); break;
-             ^~~~~~~~
-../src/serial_audio_lib.c:13:17: warning: 'curr_freq' defined but not used [-Wunused-variable]
- static uint32_t curr_freq;
-                 ^~~~~~~~~
-../src/serial_audio_lib.c:12:17: warning: 'dds_inc_word' defined but not used [-Wunused-variable]
- static uint32_t dds_inc_word;
-                 ^~~~~~~~~~~~
-make: *** [src/serial_audio_lib.o] Error 1
-20:23:36 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c: In function 'handle_choice':
-../src/serial_audio_lib.c:38:2: error: unknown type name 'User_Option'
-  User_Option choice = UNKNOWN;
-  ^~~~~~~~~~~
-../src/serial_audio_lib.c:38:23: error: 'UNKNOWN' undeclared (first use in this function)
-  User_Option choice = UNKNOWN;
-                       ^~~~~~~
-../src/serial_audio_lib.c:38:23: note: each undeclared identifier is reported only once for each function it appears in
-../src/serial_audio_lib.c:42:13: warning: implicit declaration of function 'inc_freq' [-Wimplicit-function-declaration]
-    choice = inc_freq(100); break;
-             ^~~~~~~~
-../src/serial_audio_lib.c:46:13: warning: implicit declaration of function 'dec_freq' [-Wimplicit-function-declaration]
-    choice = dec_freq(100); break;
-             ^~~~~~~~
-../src/serial_audio_lib.c:52:9: warning: 'return' with a value, in function returning void
-  return choice;
-         ^~~~~~
-../src/serial_audio_lib.c:37:6: note: declared here
- void handle_choice(void) {
-      ^~~~~~~~~~~~~
-../src/serial_audio_lib.c: At top level:
-../src/serial_audio_lib.c:55:6: warning: conflicting types for 'inc_freq'
- void inc_freq(uint32_t change_hz) {
-      ^~~~~~~~
-../src/serial_audio_lib.c:42:13: note: previous implicit declaration of 'inc_freq' was here
-    choice = inc_freq(100); break;
-             ^~~~~~~~
-../src/serial_audio_lib.c:59:6: warning: conflicting types for 'dec_freq'
- void dec_freq(uint32_t change_hz) {
-      ^~~~~~~~
-../src/serial_audio_lib.c:46:13: note: previous implicit declaration of 'dec_freq' was here
-    choice = dec_freq(100); break;
-             ^~~~~~~~
-../src/serial_audio_lib.c:13:17: warning: 'curr_freq' defined but not used [-Wunused-variable]
- static uint32_t curr_freq;
-                 ^~~~~~~~~
-../src/serial_audio_lib.c:12:17: warning: 'dds_inc_word' defined but not used [-Wunused-variable]
- static uint32_t dds_inc_word;
-                 ^~~~~~~~~~~~
-make: *** [src/serial_audio_lib.o] Error 1
-20:23:50 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c: In function 'handle_choice':
-../src/serial_audio_lib.c:38:2: error: unknown type name 'User_Option'
-  User_Option choice = UNKNOWN;
-  ^~~~~~~~~~~
-../src/serial_audio_lib.c:38:23: error: 'UNKNOWN' undeclared (first use in this function)
-  User_Option choice = UNKNOWN;
-                       ^~~~~~~
-../src/serial_audio_lib.c:38:23: note: each undeclared identifier is reported only once for each function it appears in
-../src/serial_audio_lib.c:42:4: warning: implicit declaration of function 'inc_freq' [-Wimplicit-function-declaration]
-    inc_freq(100); break;
-    ^~~~~~~~
-../src/serial_audio_lib.c:46:4: warning: implicit declaration of function 'dec_freq' [-Wimplicit-function-declaration]
-    dec_freq(100); break;
-    ^~~~~~~~
-../src/serial_audio_lib.c:38:14: warning: unused variable 'choice' [-Wunused-variable]
-  User_Option choice = UNKNOWN;
-              ^~~~~~
-../src/serial_audio_lib.c: At top level:
-../src/serial_audio_lib.c:54:6: warning: conflicting types for 'inc_freq'
- void inc_freq(uint32_t change_hz) {
-      ^~~~~~~~
-../src/serial_audio_lib.c:42:4: note: previous implicit declaration of 'inc_freq' was here
-    inc_freq(100); break;
-    ^~~~~~~~
-../src/serial_audio_lib.c:58:6: warning: conflicting types for 'dec_freq'
- void dec_freq(uint32_t change_hz) {
-      ^~~~~~~~
-../src/serial_audio_lib.c:46:4: note: previous implicit declaration of 'dec_freq' was here
-    dec_freq(100); break;
-    ^~~~~~~~
-../src/serial_audio_lib.c:13:17: warning: 'curr_freq' defined but not used [-Wunused-variable]
- static uint32_t curr_freq;
-                 ^~~~~~~~~
-../src/serial_audio_lib.c:12:17: warning: 'dds_inc_word' defined but not used [-Wunused-variable]
- static uint32_t dds_inc_word;
-                 ^~~~~~~~~~~~
-make: *** [src/serial_audio_lib.o] Error 1
-20:23:55 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c: In function 'handle_choice':
-../src/serial_audio_lib.c:41:4: warning: implicit declaration of function 'inc_freq' [-Wimplicit-function-declaration]
-    inc_freq(100); break;
-    ^~~~~~~~
-../src/serial_audio_lib.c:45:4: warning: implicit declaration of function 'dec_freq' [-Wimplicit-function-declaration]
-    dec_freq(100); break;
-    ^~~~~~~~
-../src/serial_audio_lib.c: At top level:
-../src/serial_audio_lib.c:53:6: warning: conflicting types for 'inc_freq'
- void inc_freq(uint32_t change_hz) {
-      ^~~~~~~~
-../src/serial_audio_lib.c:41:4: note: previous implicit declaration of 'inc_freq' was here
-    inc_freq(100); break;
-    ^~~~~~~~
-../src/serial_audio_lib.c:57:6: warning: conflicting types for 'dec_freq'
- void dec_freq(uint32_t change_hz) {
-      ^~~~~~~~
-../src/serial_audio_lib.c:45:4: note: previous implicit declaration of 'dec_freq' was here
-    dec_freq(100); break;
-    ^~~~~~~~
-../src/serial_audio_lib.c:13:17: warning: 'curr_freq' defined but not used [-Wunused-variable]
- static uint32_t curr_freq;
-                 ^~~~~~~~~
-../src/serial_audio_lib.c:12:17: warning: 'dds_inc_word' defined but not used [-Wunused-variable]
- static uint32_t dds_inc_word;
-                 ^~~~~~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  31404	   1344	   3180	  35928	   8c58	project3.elf
-'Finished building: project3.elf.size'
-' '
-20:24:16 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c:13:17: warning: 'curr_freq' defined but not used [-Wunused-variable]
- static uint32_t curr_freq;
-                 ^~~~~~~~~
-../src/serial_audio_lib.c:12:17: warning: 'dds_inc_word' defined but not used [-Wunused-variable]
- static uint32_t dds_inc_word;
-                 ^~~~~~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  31404	   1344	   3180	  35928	   8c58	project3.elf
-'Finished building: project3.elf.size'
-' '
-20:24:23 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c:13:17: warning: 'curr_freq' defined but not used [-Wunused-variable]
- static uint32_t curr_freq;
-                 ^~~~~~~~~
-../src/serial_audio_lib.c:12:17: warning: 'dds_inc_word' defined but not used [-Wunused-variable]
- static uint32_t dds_inc_word;
-                 ^~~~~~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  31404	   1344	   3180	  35928	   8c58	project3.elf
-'Finished building: project3.elf.size'
-' '
-20:24:26 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c:13:17: warning: 'curr_freq' defined but not used [-Wunused-variable]
- static uint32_t curr_freq;
-                 ^~~~~~~~~
-../src/serial_audio_lib.c:12:17: warning: 'dds_inc_word' defined but not used [-Wunused-variable]
- static uint32_t dds_inc_word;
-                 ^~~~~~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  31404	   1344	   3180	  35928	   8c58	project3.elf
-'Finished building: project3.elf.size'
-' '
-20:24:39 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c:12:17: warning: 'dds_inc_word' defined but not used [-Wunused-variable]
- static uint32_t dds_inc_word;
-                 ^~~~~~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  31428	   1344	   3188	  35960	   8c78	project3.elf
-'Finished building: project3.elf.size'
-' '
-20:24:51 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c:12:17: warning: 'dds_inc_word' defined but not used [-Wunused-variable]
- static uint32_t dds_inc_word;
-                 ^~~~~~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  31452	   1344	   3188	  35984	   8c90	project3.elf
-'Finished building: project3.elf.size'
-' '
-20:24:52 **** Auto Build of configuration Debug for project project3 ****
+19:47:10 **** Incremental Build of configuration Debug for project project3_bsp_xgpio_example_1 ****
 make all 
 make: Nothing to be done for `all'.
-20:25:11 **** Auto Build of configuration Debug for project project3 ****
+19:48:22 **** Auto Build of configuration Debug for project project3 ****
 make all 
+'Building file: ../src/codec.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/codec.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/codec.d" -MT"src/codec.o" -o "src/codec.o" "../src/codec.c"
+'Finished building: ../src/codec.c'
+' '
 'Building file: ../src/dds_phase_accum.c'
 'Invoking: MicroBlaze gcc compiler'
 mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dds_phase_accum.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dds_phase_accum.d" -MT"src/dds_phase_accum.o" -o "src/dds_phase_accum.o" "../src/dds_phase_accum.c"
@@ -1157,417 +115,10 @@ mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dds_phase_accum.o" -I../../pr
 mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
 'Finished building: ../src/main.c'
 ' '
-'Building file: ../src/serial_audio_lib.c'
+'Building file: ../src/platform.c'
 'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c:12:17: warning: 'dds_inc_word' defined but not used [-Wunused-variable]
- static uint32_t dds_inc_word;
-                 ^~~~~~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  31452	   1344	   3188	  35984	   8c90	project3.elf
-'Finished building: project3.elf.size'
-' '
-20:25:20 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/dds_phase_accum.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dds_phase_accum.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dds_phase_accum.d" -MT"src/dds_phase_accum.o" -o "src/dds_phase_accum.o" "../src/dds_phase_accum.c"
-'Finished building: ../src/dds_phase_accum.c'
-' '
-'Building file: ../src/main.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-'Finished building: ../src/main.c'
-' '
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c:12:17: warning: 'dds_inc_word' defined but not used [-Wunused-variable]
- static uint32_t dds_inc_word;
-                 ^~~~~~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  31452	   1344	   3188	  35984	   8c90	project3.elf
-'Finished building: project3.elf.size'
-' '
-20:25:28 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/dds_phase_accum.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dds_phase_accum.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dds_phase_accum.d" -MT"src/dds_phase_accum.o" -o "src/dds_phase_accum.o" "../src/dds_phase_accum.c"
-In file included from ../src/dds_phase_accum.c:9:0:
-../src/dds_phase_accum.c: In function 'set_dds_accum':
-../src/dds_phase_accum.c:16:10: error: 'accum' undeclared (first use in this function)
-  putfslx(accum, FSL_ID, FSL_DEFAULT);
-          ^
-../../project3_bsp/microblaze_0/include/fsl.h:58:106: note: in definition of macro 'putfslx'
- #define putfslx(val, id, flags)      asm volatile (stringify(flags) "put\t%0,rfsl" stringify(id) :: "d" (val))
-                                                                                                          ^~~
-../src/dds_phase_accum.c:16:10: note: each undeclared identifier is reported only once for each function it appears in
-  putfslx(accum, FSL_ID, FSL_DEFAULT);
-          ^
-../../project3_bsp/microblaze_0/include/fsl.h:58:106: note: in definition of macro 'putfslx'
- #define putfslx(val, id, flags)      asm volatile (stringify(flags) "put\t%0,rfsl" stringify(id) :: "d" (val))
-                                                                                                          ^~~
-make: *** [src/dds_phase_accum.o] Error 1
-20:26:49 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/dds_phase_accum.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dds_phase_accum.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dds_phase_accum.d" -MT"src/dds_phase_accum.o" -o "src/dds_phase_accum.o" "../src/dds_phase_accum.c"
-In file included from ../src/dds_phase_accum.c:9:0:
-../src/dds_phase_accum.c: In function 'set_dds_accum':
-../src/dds_phase_accum.c:16:10: error: 'accum' undeclared (first use in this function)
-  putfslx(accum, FSL_ID, FSL_DEFAULT);
-          ^
-../../project3_bsp/microblaze_0/include/fsl.h:58:106: note: in definition of macro 'putfslx'
- #define putfslx(val, id, flags)      asm volatile (stringify(flags) "put\t%0,rfsl" stringify(id) :: "d" (val))
-                                                                                                          ^~~
-../src/dds_phase_accum.c:16:10: note: each undeclared identifier is reported only once for each function it appears in
-  putfslx(accum, FSL_ID, FSL_DEFAULT);
-          ^
-../../project3_bsp/microblaze_0/include/fsl.h:58:106: note: in definition of macro 'putfslx'
- #define putfslx(val, id, flags)      asm volatile (stringify(flags) "put\t%0,rfsl" stringify(id) :: "d" (val))
-                                                                                                          ^~~
-make: *** [src/dds_phase_accum.o] Error 1
-20:26:53 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/dds_phase_accum.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dds_phase_accum.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dds_phase_accum.d" -MT"src/dds_phase_accum.o" -o "src/dds_phase_accum.o" "../src/dds_phase_accum.c"
-In file included from ../src/dds_phase_accum.c:9:0:
-../src/dds_phase_accum.c: In function 'set_dds_accum':
-../src/dds_phase_accum.c:19:10: error: 'accum' undeclared (first use in this function)
-  putfslx(accum, FSL_ID, FSL_DEFAULT);
-          ^
-../../project3_bsp/microblaze_0/include/fsl.h:58:106: note: in definition of macro 'putfslx'
- #define putfslx(val, id, flags)      asm volatile (stringify(flags) "put\t%0,rfsl" stringify(id) :: "d" (val))
-                                                                                                          ^~~
-../src/dds_phase_accum.c:19:10: note: each undeclared identifier is reported only once for each function it appears in
-  putfslx(accum, FSL_ID, FSL_DEFAULT);
-          ^
-../../project3_bsp/microblaze_0/include/fsl.h:58:106: note: in definition of macro 'putfslx'
- #define putfslx(val, id, flags)      asm volatile (stringify(flags) "put\t%0,rfsl" stringify(id) :: "d" (val))
-                                                                                                          ^~~
-At top level:
-../src/dds_phase_accum.c:14:17: warning: 'freq_to_accum' defined but not used [-Wunused-function]
- static uint32_t freq_to_accum(uint32_t freq_hz) {
-                 ^~~~~~~~~~~~~
-make: *** [src/dds_phase_accum.o] Error 1
-20:27:03 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/dds_phase_accum.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dds_phase_accum.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dds_phase_accum.d" -MT"src/dds_phase_accum.o" -o "src/dds_phase_accum.o" "../src/dds_phase_accum.c"
-In file included from ../src/dds_phase_accum.c:9:0:
-../src/dds_phase_accum.c: In function 'set_dds_accum':
-../src/dds_phase_accum.c:19:24: error: 'accum' undeclared (first use in this function)
-  putfslx(freq_to_accum(accum), FSL_ID, FSL_DEFAULT);
-                        ^
-../../project3_bsp/microblaze_0/include/fsl.h:58:106: note: in definition of macro 'putfslx'
- #define putfslx(val, id, flags)      asm volatile (stringify(flags) "put\t%0,rfsl" stringify(id) :: "d" (val))
-                                                                                                          ^~~
-../src/dds_phase_accum.c:19:24: note: each undeclared identifier is reported only once for each function it appears in
-  putfslx(freq_to_accum(accum), FSL_ID, FSL_DEFAULT);
-                        ^
-../../project3_bsp/microblaze_0/include/fsl.h:58:106: note: in definition of macro 'putfslx'
- #define putfslx(val, id, flags)      asm volatile (stringify(flags) "put\t%0,rfsl" stringify(id) :: "d" (val))
-                                                                                                          ^~~
-make: *** [src/dds_phase_accum.o] Error 1
-20:35:06 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/dds_phase_accum.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dds_phase_accum.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dds_phase_accum.d" -MT"src/dds_phase_accum.o" -o "src/dds_phase_accum.o" "../src/dds_phase_accum.c"
-../src/dds_phase_accum.c: In function 'set_dds_accum':
-../src/dds_phase_accum.c:19:41: error: 'accum' undeclared (first use in this function)
-  uint32_t accum_reg_val = freq_to_accum(accum) & DDS_ACCUM_MASK;
-                                         ^~~~~
-../src/dds_phase_accum.c:19:41: note: each undeclared identifier is reported only once for each function it appears in
-../src/dds_phase_accum.c:19:50: error: 'DDS_ACCUM_MASK' undeclared (first use in this function)
-  uint32_t accum_reg_val = freq_to_accum(accum) & DDS_ACCUM_MASK;
-                                                  ^~~~~~~~~~~~~~
-In file included from ../src/dds_phase_accum.c:9:0:
-../../project3_bsp/microblaze_0/include/fsl.h:58:109: error: expected expression before ')' token
- #define putfslx(val, id, flags)      asm volatile (stringify(flags) "put\t%0,rfsl" stringify(id) :: "d" (val))
-                                                                                                             ^
-../src/dds_phase_accum.c:20:2: note: in expansion of macro 'putfslx'
-  putfslx(, FSL_ID, FSL_DEFAULT);
-  ^~~~~~~
-../src/dds_phase_accum.c:19:11: warning: unused variable 'accum_reg_val' [-Wunused-variable]
-  uint32_t accum_reg_val = freq_to_accum(accum) & DDS_ACCUM_MASK;
-           ^~~~~~~~~~~~~
-make: *** [src/dds_phase_accum.o] Error 1
-20:35:08 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/dds_phase_accum.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dds_phase_accum.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dds_phase_accum.d" -MT"src/dds_phase_accum.o" -o "src/dds_phase_accum.o" "../src/dds_phase_accum.c"
-../src/dds_phase_accum.c: In function 'set_dds_accum':
-../src/dds_phase_accum.c:19:41: error: 'accum' undeclared (first use in this function)
-  uint32_t accum_reg_val = freq_to_accum(accum) & DDS_ACCUM_MASK;
-                                         ^~~~~
-../src/dds_phase_accum.c:19:41: note: each undeclared identifier is reported only once for each function it appears in
-../src/dds_phase_accum.c:19:50: error: 'DDS_ACCUM_MASK' undeclared (first use in this function)
-  uint32_t accum_reg_val = freq_to_accum(accum) & DDS_ACCUM_MASK;
-                                                  ^~~~~~~~~~~~~~
-make: *** [src/dds_phase_accum.o] Error 1
-20:35:12 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/dds_phase_accum.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dds_phase_accum.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dds_phase_accum.d" -MT"src/dds_phase_accum.o" -o "src/dds_phase_accum.o" "../src/dds_phase_accum.c"
-../src/dds_phase_accum.c: In function 'set_dds_accum':
-../src/dds_phase_accum.c:19:37: error: 'accum' undeclared (first use in this function)
-  uint32_t accum_val = freq_to_accum(accum) & DDS_ACCUM_MASK;
-                                     ^~~~~
-../src/dds_phase_accum.c:19:37: note: each undeclared identifier is reported only once for each function it appears in
-../src/dds_phase_accum.c:19:46: error: 'DDS_ACCUM_MASK' undeclared (first use in this function)
-  uint32_t accum_val = freq_to_accum(accum) & DDS_ACCUM_MASK;
-                                              ^~~~~~~~~~~~~~
-make: *** [src/dds_phase_accum.o] Error 1
-20:35:17 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/dds_phase_accum.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dds_phase_accum.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dds_phase_accum.d" -MT"src/dds_phase_accum.o" -o "src/dds_phase_accum.o" "../src/dds_phase_accum.c"
-../src/dds_phase_accum.c: In function 'set_dds_accum':
-../src/dds_phase_accum.c:19:48: error: 'DDS_ACCUM_MASK' undeclared (first use in this function)
-  uint32_t accum_val = freq_to_accum(freq_hz) & DDS_ACCUM_MASK;
-                                                ^~~~~~~~~~~~~~
-../src/dds_phase_accum.c:19:48: note: each undeclared identifier is reported only once for each function it appears in
-make: *** [src/dds_phase_accum.o] Error 1
-20:38:18 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/dds_phase_accum.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dds_phase_accum.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dds_phase_accum.d" -MT"src/dds_phase_accum.o" -o "src/dds_phase_accum.o" "../src/dds_phase_accum.c"
-'Finished building: ../src/dds_phase_accum.c'
-' '
-'Building file: ../src/main.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-'Finished building: ../src/main.c'
-' '
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c:12:17: warning: 'dds_inc_word' defined but not used [-Wunused-variable]
- static uint32_t dds_inc_word;
-                 ^~~~~~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  31560	   1344	   3184	  36088	   8cf8	project3.elf
-'Finished building: project3.elf.size'
-' '
-20:53:56 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/dds_phase_accum.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dds_phase_accum.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dds_phase_accum.d" -MT"src/dds_phase_accum.o" -o "src/dds_phase_accum.o" "../src/dds_phase_accum.c"
-../src/dds_phase_accum.c: In function 'freq_to_accum':
-../src/dds_phase_accum.c:17:29: error: 'DDC_SAMPLE_RATE' undeclared (first use in this function)
-  return (freq_hz * c2p27) / DDC_SAMPLE_RATE;
-                             ^~~~~~~~~~~~~~~
-../src/dds_phase_accum.c:17:29: note: each undeclared identifier is reported only once for each function it appears in
-../src/dds_phase_accum.c:18:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
-make: *** [src/dds_phase_accum.o] Error 1
-20:54:00 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/dds_phase_accum.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dds_phase_accum.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dds_phase_accum.d" -MT"src/dds_phase_accum.o" -o "src/dds_phase_accum.o" "../src/dds_phase_accum.c"
-'Finished building: ../src/dds_phase_accum.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  31588	   1344	   3188	  36120	   8d18	project3.elf
-'Finished building: project3.elf.size'
-' '
-20:54:09 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/dds_phase_accum.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dds_phase_accum.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dds_phase_accum.d" -MT"src/dds_phase_accum.o" -o "src/dds_phase_accum.o" "../src/dds_phase_accum.c"
-'Finished building: ../src/dds_phase_accum.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  31588	   1344	   3188	  36120	   8d18	project3.elf
-'Finished building: project3.elf.size'
-' '
-20:54:58 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/dds_phase_accum.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dds_phase_accum.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dds_phase_accum.d" -MT"src/dds_phase_accum.o" -o "src/dds_phase_accum.o" "../src/dds_phase_accum.c"
-'Finished building: ../src/dds_phase_accum.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  31608	   1344	   3184	  36136	   8d28	project3.elf
-'Finished building: project3.elf.size'
-' '
-20:56:07 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c:12:17: warning: 'dds_inc_word' defined but not used [-Wunused-variable]
- static uint32_t dds_inc_word;
-                 ^~~~~~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  31672	   1344	   3184	  36200	   8d68	project3.elf
-'Finished building: project3.elf.size'
-' '
-20:56:19 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  31672	   1344	   3184	  36200	   8d68	project3.elf
-'Finished building: project3.elf.size'
-' '
-20:56:58 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  31672	   1344	   3184	  36200	   8d68	project3.elf
-'Finished building: project3.elf.size'
-' '
-20:57:03 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  31672	   1348	   3180	  36200	   8d68	project3.elf
-'Finished building: project3.elf.size'
-' '
-20:57:52 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c:65:1: error: expected identifier or '(' before '}' token
- }
- ^
-make: *** [src/serial_audio_lib.o] Error 1
-20:57:55 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  31672	   1348	   3180	  36200	   8d68	project3.elf
-'Finished building: project3.elf.size'
-' '
-20:58:17 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/main.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-../src/main.c: In function 'main':
-../src/main.c:81:5: warning: implicit declaration of function 'sin_audio_test' [-Wimplicit-function-declaration]
-     sin_audio_test();
-     ^~~~~~~~~~~~~~
-../src/main.c:91:3: warning: implicit declaration of function 'handle_choice' [-Wimplicit-function-declaration]
-   handle_choice();
-   ^~~~~~~~~~~~~
-'Finished building: ../src/main.c'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
 ' '
 'Building file: ../src/serial_audio_lib.c'
 'Invoking: MicroBlaze gcc compiler'
@@ -1582,474 +133,247 @@ mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlitt
 'Invoking: MicroBlaze Print Size'
 mb-size project3.elf  |tee "project3.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  31672	   1348	   3180	  36200	   8d68	project3.elf
+  44212	   1364	   3208	  48784	   be90	project3.elf
 'Finished building: project3.elf.size'
 ' '
-20:58:25 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/main.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-../src/main.c: In function 'main':
-../src/main.c:81:5: warning: implicit declaration of function 'sin_audio_test' [-Wimplicit-function-declaration]
-     sin_audio_test();
-     ^~~~~~~~~~~~~~
-'Finished building: ../src/main.c'
-' '
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  31672	   1348	   3180	  36200	   8d68	project3.elf
-'Finished building: project3.elf.size'
-' '
-20:58:36 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-./src/main.o: In function `main':
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/main.c:81: undefined reference to `sin_audio_test'
-collect2.exe: error: ld returned 1 exit status
-make: *** [project3.elf] Error 1
-20:58:53 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/main.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-'Finished building: ../src/main.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  31600	   1348	   3180	  36128	   8d20	project3.elf
-'Finished building: project3.elf.size'
-' '
-20:59:23 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/main.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-'Finished building: ../src/main.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  31604	   1348	   3184	  36136	   8d28	project3.elf
-'Finished building: project3.elf.size'
-' '
-21:04:07 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  31652	   1348	   3184	  36184	   8d58	project3.elf
-'Finished building: project3.elf.size'
-' '
-21:04:30 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c: In function 'handle_choice':
-../src/serial_audio_lib.c:46:4: warning: implicit declaration of function 'get_freq' [-Wimplicit-function-declaration]
-    get_freq(); break;
-    ^~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-./src/serial_audio_lib.o: In function `handle_choice':
-C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sdk\project3\Debug/../src/serial_audio_lib.c:46: undefined reference to `get_freq'
-collect2.exe: error: ld returned 1 exit status
-make: *** [project3.elf] Error 1
-21:04:45 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  31900	   1348	   3184	  36432	   8e50	project3.elf
-'Finished building: project3.elf.size'
-' '
-21:07:36 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c: In function 'get_freq':
-../src/serial_audio_lib.c:28:8: warning: unused variable 'new_char' [-Wunused-variable]
-   char new_char = getchar();
-        ^~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  32116	   1348	   3184	  36648	   8f28	project3.elf
-'Finished building: project3.elf.size'
-' '
-21:10:47 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c: In function 'get_freq':
-../src/serial_audio_lib.c:34:48: error: stray '`' in program
-  uint32_t new_freq = (uint32_t)atoi(input_buff)`
-                                                ^
-../src/serial_audio_lib.c:35:1: error: expected ',' or ';' before '}' token
- }
- ^
-../src/serial_audio_lib.c:75:1: error: expected declaration or statement at end of input
- }
- ^
-../src/serial_audio_lib.c:34:11: warning: unused variable 'new_freq' [-Wunused-variable]
-  uint32_t new_freq = (uint32_t)atoi(input_buff)`
-           ^~~~~~~~
-At top level:
-../src/serial_audio_lib.c:73:6: warning: 'init_audio' defined but not used [-Wunused-function]
- void init_audio(void) {
-      ^~~~~~~~~~
-../src/serial_audio_lib.c:55:6: warning: 'handle_choice' defined but not used [-Wunused-function]
- void handle_choice(void) {
-      ^~~~~~~~~~~~~
-../src/serial_audio_lib.c:38:6: warning: 'print_main_menu' defined but not used [-Wunused-function]
- void print_main_menu(void) {
-      ^~~~~~~~~~~~~~~
-make: *** [src/serial_audio_lib.o] Error 1
-21:10:48 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c: In function 'get_freq':
-../src/serial_audio_lib.c:34:11: warning: unused variable 'new_freq' [-Wunused-variable]
-  uint32_t new_freq = (uint32_t)atoi(input_buff);
-           ^~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  33192	   1348	   3180	  37720	   9358	project3.elf
-'Finished building: project3.elf.size'
-' '
-21:11:08 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c: In function 'get_freq':
-../src/serial_audio_lib.c:34:11: warning: unused variable 'new_freq' [-Wunused-variable]
-  uint32_t new_freq = (uint32_t)atoi(input_buff);
-           ^~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  33212	   1348	   3184	  37744	   9370	project3.elf
-'Finished building: project3.elf.size'
-' '
-21:11:44 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c: In function 'get_freq':
-../src/serial_audio_lib.c:35:11: warning: unused variable 'new_freq' [-Wunused-variable]
-  uint32_t new_freq = (uint32_t)atoi(input_buff);
-           ^~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  33240	   1348	   3180	  37768	   9388	project3.elf
-'Finished building: project3.elf.size'
-' '
-21:11:56 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c: In function 'get_freq':
-../src/serial_audio_lib.c:36:11: warning: unused variable 'new_freq' [-Wunused-variable]
-  uint32_t new_freq = (uint32_t)atoi(input_buff);
-           ^~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  33240	   1348	   3180	  37768	   9388	project3.elf
-'Finished building: project3.elf.size'
-' '
-21:32:16 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c: In function 'get_freq':
-../src/serial_audio_lib.c:25:2: error: unknown type name 'bool'
-  bool invalid_input = false;
-  ^~~~
-../src/serial_audio_lib.c:25:23: error: 'false' undeclared (first use in this function)
-  bool invalid_input = false;
-                       ^~~~~
-../src/serial_audio_lib.c:25:23: note: each undeclared identifier is reported only once for each function it appears in
-../src/serial_audio_lib.c:41:11: warning: unused variable 'new_freq' [-Wunused-variable]
-  uint32_t new_freq = (uint32_t)atoi(input_buff);
-           ^~~~~~~~
-../src/serial_audio_lib.c:25:7: warning: unused variable 'invalid_input' [-Wunused-variable]
-  bool invalid_input = false;
-       ^~~~~~~~~~~~~
-make: *** [src/serial_audio_lib.o] Error 1
-21:32:27 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c: In function 'get_freq':
-../src/serial_audio_lib.c:42:11: warning: unused variable 'new_freq' [-Wunused-variable]
-  uint32_t new_freq = (uint32_t)atoi(input_buff);
-           ^~~~~~~~
-../src/serial_audio_lib.c:26:7: warning: unused variable 'invalid_input' [-Wunused-variable]
-  bool invalid_input = false;
-       ^~~~~~~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  33284	   1348	   3184	  37816	   93b8	project3.elf
-'Finished building: project3.elf.size'
-' '
-21:32:36 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c: In function 'get_freq':
-../src/serial_audio_lib.c:42:11: warning: unused variable 'new_freq' [-Wunused-variable]
-  uint32_t new_freq = (uint32_t)atoi(input_buff);
-           ^~~~~~~~
-../src/serial_audio_lib.c:26:7: warning: variable 'invalid_input' set but not used [-Wunused-but-set-variable]
-  bool invalid_input = false;
-       ^~~~~~~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  33296	   1348	   3180	  37824	   93c0	project3.elf
-'Finished building: project3.elf.size'
-' '
-21:33:07 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c: In function 'get_freq':
-../src/serial_audio_lib.c:38:15: error: 'i' undeclared (first use in this function)
-    input_buff[i] = new_char;
-               ^
-../src/serial_audio_lib.c:38:15: note: each undeclared identifier is reported only once for each function it appears in
-../src/serial_audio_lib.c:43:11: warning: unused variable 'new_freq' [-Wunused-variable]
-  uint32_t new_freq = (uint32_t)atoi(input_buff);
-           ^~~~~~~~
-../src/serial_audio_lib.c:26:7: warning: variable 'invalid_input' set but not used [-Wunused-but-set-variable]
-  bool invalid_input = false;
-       ^~~~~~~~~~~~~
-make: *** [src/serial_audio_lib.o] Error 1
-21:33:10 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c: In function 'get_freq':
-../src/serial_audio_lib.c:43:11: warning: unused variable 'new_freq' [-Wunused-variable]
-  uint32_t new_freq = (uint32_t)atoi(input_buff);
-           ^~~~~~~~
-../src/serial_audio_lib.c:26:7: warning: variable 'invalid_input' set but not used [-Wunused-but-set-variable]
-  bool invalid_input = false;
-       ^~~~~~~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  33296	   1348	   3180	  37824	   93c0	project3.elf
-'Finished building: project3.elf.size'
-' '
-21:33:48 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c: In function 'get_freq':
-../src/serial_audio_lib.c:48:11: warning: unused variable 'new_freq' [-Wunused-variable]
-  uint32_t new_freq = (uint32_t)atoi(input_buff);
-           ^~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  33360	   1348	   3180	  37888	   9400	project3.elf
-'Finished building: project3.elf.size'
-' '
-21:34:00 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-../src/serial_audio_lib.c: In function 'get_freq':
-../src/serial_audio_lib.c:46:12: warning: unused variable 'new_freq' [-Wunused-variable]
-   uint32_t new_freq = (uint32_t)atoi(input_buff);
-            ^~~~~~~~
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  33364	   1348	   3184	  37896	   9408	project3.elf
-'Finished building: project3.elf.size'
-' '
-21:34:23 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/serial_audio_lib.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
-'Finished building: ../src/serial_audio_lib.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  33400	   1348	   3180	  37928	   9428	project3.elf
-'Finished building: project3.elf.size'
-' '
-21:37:26 **** Auto Build of configuration Debug for project project3 ****
-make all 
-'Building file: ../src/dds_phase_accum.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dds_phase_accum.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dds_phase_accum.d" -MT"src/dds_phase_accum.o" -o "src/dds_phase_accum.o" "../src/dds_phase_accum.c"
-'Finished building: ../src/dds_phase_accum.c'
-' '
-'Building target: project3.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: project3.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size project3.elf  |tee "project3.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  33452	   1348	   3184	  37984	   9460	project3.elf
-'Finished building: project3.elf.size'
-' '
-21:37:37 **** Incremental Build of configuration Debug for project project3 ****
+19:48:26 **** Incremental Build of configuration Debug for project project3 ****
 make all 
 make: Nothing to be done for `all'.
-21:38:29 **** Incremental Build of configuration Debug for project project3 ****
+19:48:26 **** Incremental Build of configuration Debug for project project3_bsp_xgpio_example_1 ****
+make all 
+make: Nothing to be done for `all'.
+19:49:01 **** Auto Build of configuration Debug for project project3 ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: project3.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project3.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project3.elf  |tee "project3.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  45116	   1364	   3208	  49688	   c218	project3.elf
+'Finished building: project3.elf.size'
+' '
+19:49:27 **** Auto Build of configuration Debug for project project3 ****
+make all 
+'Building file: ../src/serial_audio_lib.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
+'Finished building: ../src/serial_audio_lib.c'
+' '
+'Building target: project3.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project3.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project3.elf  |tee "project3.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  45116	   1364	   3208	  49688	   c218	project3.elf
+'Finished building: project3.elf.size'
+' '
+19:49:51 **** Auto Build of configuration Debug for project project3 ****
+make all 
+'Building file: ../src/serial_audio_lib.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
+../src/serial_audio_lib.c: In function 'get_freq':
+../src/serial_audio_lib.c:42:14: warning: passing argument 1 of 'xil_printf' makes pointer from integer without a cast [-Wint-conversion]
+   xil_printf(new_char);
+              ^~~~~~~~
+In file included from c:\xilinx\sdk\2017.4\gnu\microblaze\nt\microblaze-xilinx-elf\include\stdlib.h:11:0,
+                 from ../src/serial_audio_lib.c:3:
+c:\xilinx\sdk\2017.4\gnu\microblaze\nt\microblaze-xilinx-elf\include\stdio.h:229:9: note: expected 'const char *' but argument is of type 'char'
+ void    _EXFUN(xil_printf, (const char*, ...));
+         ^
+'Finished building: ../src/serial_audio_lib.c'
+' '
+'Building target: project3.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project3.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project3.elf  |tee "project3.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  45140	   1364	   3208	  49712	   c230	project3.elf
+'Finished building: project3.elf.size'
+' '
+19:50:00 **** Auto Build of configuration Debug for project project3 ****
+make all 
+'Building file: ../src/serial_audio_lib.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
+'Finished building: ../src/serial_audio_lib.c'
+' '
+'Building target: project3.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project3.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project3.elf  |tee "project3.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  45152	   1364	   3204	  49720	   c238	project3.elf
+'Finished building: project3.elf.size'
+' '
+19:50:16 **** Auto Build of configuration Debug for project project3 ****
+make all 
+'Building file: ../src/serial_audio_lib.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
+'Finished building: ../src/serial_audio_lib.c'
+' '
+'Building target: project3.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project3.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project3.elf  |tee "project3.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  45180	   1364	   3208	  49752	   c258	project3.elf
+'Finished building: project3.elf.size'
+' '
+19:50:19 **** Incremental Build of configuration Debug for project project3 ****
+make all 
+make: Nothing to be done for `all'.
+19:50:19 **** Incremental Build of configuration Debug for project project3_bsp_xgpio_example_1 ****
+make all 
+make: Nothing to be done for `all'.
+19:51:42 **** Auto Build of configuration Debug for project project3 ****
+make all 
+'Building file: ../src/serial_audio_lib.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
+../src/serial_audio_lib.c: In function 'get_freq':
+../src/serial_audio_lib.c:45:2: error: expected ';' before '}' token
+  }
+  ^
+make: *** [src/serial_audio_lib.o] Error 1
+19:51:45 **** Auto Build of configuration Debug for project project3 ****
+make all 
+'Building file: ../src/serial_audio_lib.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
+'Finished building: ../src/serial_audio_lib.c'
+' '
+'Building target: project3.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project3.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project3.elf  |tee "project3.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  45184	   1364	   3204	  49752	   c258	project3.elf
+'Finished building: project3.elf.size'
+' '
+19:51:49 **** Incremental Build of configuration Debug for project project3 ****
+make all 
+make: Nothing to be done for `all'.
+19:51:49 **** Incremental Build of configuration Debug for project project3_bsp_xgpio_example_1 ****
+make all 
+make: Nothing to be done for `all'.
+19:52:41 **** Auto Build of configuration Debug for project project3 ****
+make all 
+'Building file: ../src/serial_audio_lib.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/serial_audio_lib.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/serial_audio_lib.d" -MT"src/serial_audio_lib.o" -o "src/serial_audio_lib.o" "../src/serial_audio_lib.c"
+'Finished building: ../src/serial_audio_lib.c'
+' '
+'Building target: project3.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project3.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project3.elf  |tee "project3.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  45180	   1364	   3208	  49752	   c258	project3.elf
+'Finished building: project3.elf.size'
+' '
+19:53:12 **** Incremental Build of configuration Debug for project project3 ****
+make all 
+make: Nothing to be done for `all'.
+19:53:12 **** Incremental Build of configuration Debug for project project3_bsp_xgpio_example_1 ****
+make all 
+make: Nothing to be done for `all'.
+19:54:55 **** Incremental Build of configuration Debug for project project3 ****
+make all 
+make: Nothing to be done for `all'.
+19:54:55 **** Incremental Build of configuration Debug for project project3_bsp_xgpio_example_1 ****
+make all 
+make: Nothing to be done for `all'.
+19:55:05 **** Incremental Build of configuration Debug for project project3 ****
+make all 
+make: Nothing to be done for `all'.
+19:55:06 **** Incremental Build of configuration Debug for project project3_bsp_xgpio_example_1 ****
+make all 
+make: Nothing to be done for `all'.
+19:59:21 **** Incremental Build of configuration Debug for project project3 ****
+make all 
+make: Nothing to be done for `all'.
+19:59:21 **** Incremental Build of configuration Debug for project project3_bsp_xgpio_example_1 ****
+make all 
+make: Nothing to be done for `all'.
+20:00:28 **** Incremental Build of configuration Debug for project project3 ****
+make all 
+make: Nothing to be done for `all'.
+20:00:29 **** Incremental Build of configuration Debug for project project3_bsp_xgpio_example_1 ****
+make all 
+make: Nothing to be done for `all'.
+20:00:40 **** Auto Build of configuration Debug for project project3 ****
+make all 
+'Building file: ../src/dds_phase_accum.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dds_phase_accum.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dds_phase_accum.d" -MT"src/dds_phase_accum.o" -o "src/dds_phase_accum.o" "../src/dds_phase_accum.c"
+'Finished building: ../src/dds_phase_accum.c'
+' '
+'Building target: project3.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project3.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project3.elf  |tee "project3.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  45180	   1364	   3208	  49752	   c258	project3.elf
+'Finished building: project3.elf.size'
+' '
+20:12:13 **** Incremental Build of configuration Debug for project project3 ****
+make all 
+make: Nothing to be done for `all'.
+20:12:14 **** Incremental Build of configuration Debug for project project3_bsp_xgpio_example_1 ****
+make all 
+make: Nothing to be done for `all'.
+21:00:43 **** Auto Build of configuration Debug for project project3 ****
+make all 
+'Building file: ../src/dds_phase_accum.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dds_phase_accum.o" -I../../project3_bsp/microblaze_0/include -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dds_phase_accum.d" -MT"src/dds_phase_accum.o" -o "src/dds_phase_accum.o" "../src/dds_phase_accum.c"
+'Finished building: ../src/dds_phase_accum.c'
+' '
+'Building target: project3.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../project3_bsp/microblaze_0/lib -mlittle-endian -mcpu=v10.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "project3.elf"  ./src/codec.o ./src/dds_phase_accum.o ./src/main.o ./src/platform.o ./src/serial_audio_lib.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: project3.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size project3.elf  |tee "project3.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  44300	   1364	   3208	  48872	   bee8	project3.elf
+'Finished building: project3.elf.size'
+' '
+21:02:01 **** Incremental Build of configuration Debug for project project3 ****
+make all 
+make: Nothing to be done for `all'.
+21:02:01 **** Incremental Build of configuration Debug for project project3_bsp_xgpio_example_1 ****
 make all 
 make: Nothing to be done for `all'.

@@ -49,6 +49,5 @@ Compiling architecture synth of entity dds_compiler_v6_0_15.dds_compiler_v6_0_15
 Compiling architecture synth of entity dds_compiler_v6_0_15.dds_compiler_v6_0_15_viv [\dds_compiler_v6_0_15_viv(c_xdev...]
 Compiling architecture xilinx of entity dds_compiler_v6_0_15.dds_compiler_v6_0_15 [\dds_compiler_v6_0_15(c_xdevicef...]
 Compiling architecture dds_compiler_0_arch of entity xil_defaultlib.dds_compiler_0 [dds_compiler_0_default]
-Compiling architecture behavioral of entity xil_defaultlib.lowlevel_dac_intfc [lowlevel_dac_intfc_default]
 Compiling architecture behavioral of entity xil_defaultlib.dds_tb
 Built simulation snapshot dds_tb_behav

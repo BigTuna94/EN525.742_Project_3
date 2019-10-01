@@ -32,6 +32,7 @@ static void get_freq(void) {
 	for (input_len = 0; input_len < sizeof(input_buff); input_len++) {
 		char new_char = getchar();
 		if (new_char == '\n' || new_char == '\r') {
+			xil_printf("\r\n");
 			break;
 		}
 		if (new_char >= '0' && new_char <= '9') {
@@ -39,6 +40,8 @@ static void get_freq(void) {
 		} else {
 			invalid_input = true;
 		}
+
+		xil_printf("%c", new_char);
 	}
 	if (input_len <= 0 || invalid_input) {
 		xil_printf("Invalid input detected!\r\n");
@@ -51,13 +54,14 @@ static void get_freq(void) {
 
 
 void print_main_menu(void) {
-	xil_printf("\r\n\tWelcome to the DDS Synthesizer!\r\n");
 	xil_printf("\t===== Main Menu =====\r\n");
+	xil_printf("Current Frequency: %luHz\r\n", curr_freq);
 	xil_printf("\tf - set the frequency\r\n");
 	xil_printf("\tu - step frequency up 100Hz\r\n");
 	xil_printf("\tU - step frequency up 1000Hz\r\n");
 	xil_printf("\td - step frequency down 100Hz\r\n");
 	xil_printf("\tD - step frequency down 1000Hz\r\n");
+	xil_printf("\tR - reset phase (resets DDS)\r\n");
 	xil_printf("\r\nPress a key to continue...\r\n");
 }
 
@@ -80,6 +84,9 @@ void handle_choice(void) {
 			dec_freq(100); break;
 		case 'D':
 			dec_freq(1000); break;
+		case 'r':
+		case 'R':
+			reset_dds_phase(); break;
 		default:
 			xil_printf("[handle_choice] Unhandled character received: 0x%02x\r\n", input_c);
 	}

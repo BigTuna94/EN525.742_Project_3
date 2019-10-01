@@ -1,10 +1,10 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4.1 (win64) Build 2117270 Tue Jan 30 15:32:00 MST 2018
-// Date        : Tue Sep 10 20:42:06 2019
+// Date        : Wed Sep 25 19:29:15 2019
 // Host        : ZPCX running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_2/project_2.srcs/sources_1/bd/proc_system/ip/proc_system_dlmb_bram_if_cntlr_0/proc_system_dlmb_bram_if_cntlr_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top proc_system_dlmb_bram_if_cntlr_0 -prefix
+//               proc_system_dlmb_bram_if_cntlr_0_ proc_system_dlmb_bram_if_cntlr_0_stub.v
 // Design      : proc_system_dlmb_bram_if_cntlr_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg484-1

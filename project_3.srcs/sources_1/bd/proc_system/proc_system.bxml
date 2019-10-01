@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="33">
   <CompositeFile CompositeFileTopName="proc_system" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1569365721"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1569365721"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1569365721"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1569365721"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1569886371"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1569886371"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1569886371"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1569886371"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\proc_system_microblaze_0_0\proc_system_microblaze_0_0.xci" Type="IP">
         <Instance HierarchyPath="microblaze_0"/>
@@ -80,20 +80,11 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\proc_system_microblaze_0_axi_periph_0\proc_system_microblaze_0_axi_periph_0.xci" Type="IP">
+        <Instance HierarchyPath="microblaze_0_axi_periph"/>
         <Properties IsEditable="false" IsVisible="false" Timestamp="1568162220" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="synth\proc_system.vhd" Type="VHDL">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-      </File>
-      <File Name="sim\proc_system.vhd" Type="VHDL">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\proc_system_axi_quad_spi_0_0\proc_system_axi_quad_spi_0_0.xci" Type="IP">
@@ -112,22 +103,6 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\proc_system_axi_gpio_0_0\proc_system_axi_gpio_0_0.xci" Type="IP">
-        <Instance HierarchyPath="axi_gpio_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="1568327901" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\proc_system_dds_compiler_0_0\proc_system_dds_compiler_0_0.xci" Type="IP">
-        <Instance HierarchyPath="dds_compiler_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="ip\proc_system_axi_gpio_1_0\proc_system_axi_gpio_1_0.xci" Type="IP">
         <Instance HierarchyPath="axi_gpio_dds_resetn"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
@@ -136,12 +111,14 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\proc_system_s00_mmu_0\proc_system_s00_mmu_0.xci" Type="IP">
-        <Instance HierarchyPath="microblaze_0_axi_periph/s00_mmu"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+      <File Name="synth\proc_system.vhd" Type="VHDL">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
+      </File>
+      <File Name="sim\proc_system.vhd" Type="VHDL">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="proc_system.bmm" Type="BMM">
