@@ -31,17 +31,17 @@ static int init_gpio(void) {
 
 static uint32_t freq_to_accum(uint32_t freq_hz) {
 	// phase_accum = (freq_hz * 2^27) / sample_rate => freq_hz * 2^27 / 100MHz => freq_hz * 1.34217728
-	//const float freq_to_phase_accum_coefficient = 1.34217728;
 	const double freq_to_phase_accum_coefficient = 1.34217728;
 	uint32_t accum_val = (uint32_t) round(freq_hz * freq_to_phase_accum_coefficient);
 	return accum_val;
 }
 
 void set_dds_accum(uint32_t freq_hz) {
-	uint32_t accum_val = freq_to_accum(freq_hz) >> 5; // only top 27 bits
-	//putfslx(accum_val, FSL_ID, FSL_DEFAULT);
-	putfslx(accum_val, FSL_ID, FSL_NONBLOCKING);
+	uint32_t accum_val = freq_to_accum(freq_hz);
+	// uint32_t adj_accum_val = accum_val >> 5; // only top 27 bits
+	putfslx(accum_val, FSL_ID, FSL_DEFAULT);
 	xil_printf("Frequency set to %luHz\r\n", freq_hz);
+	xil_printf("Phase Accumulator Increment set to %lu\r\n", accum_val);
 }
 
 void reset_dds_phase(void) {

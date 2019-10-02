@@ -260,12 +260,13 @@ begin
     ila_probe0(4) <= adc_ready;
     ila_probe0(7 downto 5) <= (others => '0');
     
-    ila_probe1(7 downto 2) <= (others => '0');
-    ila_probe1(1) <= dds_m_reset_out;
+    ila_probe1(7 downto 1) <= (others => '0');
+    --ila_probe1(1) <= dds_m_reset_out;
     ila_probe1(0) <= dds_m_tvalid_out;
     
-    ila_probe2 <= audio_out_word(15 downto 0);
-    ila_probe3 <= (others => '0');
+    ila_probe2(0) <= dds_m_reset_out;
+    ila_probe2(15 downto 1) <= (others => '0');
+    ila_probe3 <= audio_out_word(15 downto 0);
 
     ila_inst: component ila_0 port map (
         clk => clk,

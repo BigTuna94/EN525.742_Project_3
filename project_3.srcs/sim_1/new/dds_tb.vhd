@@ -61,6 +61,7 @@ END COMPONENT;
     signal dac_latched_data : std_logic;
     
     constant pa_50k : std_logic_vector(26 downto 0) := std_logic_vector(TO_UNSIGNED(67109, 27)); -- pase_accum  = (freq_desiredHz * 2^27) / DDS freq = (50000 * 2^27)/100MHz = 67108.864 ~= 67109
+    constant pa_100k : std_logic_vector(26 downto 0) := std_logic_vector(TO_UNSIGNED(134218, 27));
     --std_logic_vector(TO_UNSIGNED(134218, 27));
     signal num_samples : unsigned(13 downto 0) := (others => '0');
     signal max_samples : unsigned(13 downto 0) := TO_UNSIGNED(16000, 14);
@@ -118,7 +119,7 @@ begin
     reset <= '1';
     wait for 20ns;
     
-    dds_input_data <=  "00000" & pa_50k;
+    dds_input_data <=  "00000" & pa_100k;
     reset <= '0'; -- Start
     
     

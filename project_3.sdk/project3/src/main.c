@@ -91,8 +91,6 @@ int main()
     while (1) {
 		print_main_menu();
 		handle_choice();
-		xil_printf("Returning to main menu.\r\n");
-		xil_printf("\033[2J"); // Clear screen
     }
 
     cleanup_platform();

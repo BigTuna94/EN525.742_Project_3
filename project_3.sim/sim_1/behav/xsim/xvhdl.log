@@ -1,2 +1,4 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "E:/EN525.742_Project_3/project_3.srcs/sources_1/ip/dds_compiler_0/sim/dds_compiler_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/sources_1/ip/dds_compiler_0/sim/dds_compiler_0.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity dds_compiler_0
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/sim_1/new/dds_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity dds_tb

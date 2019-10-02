@@ -2,14 +2,16 @@
  %% Enter the filenames of the VHDL simulation file, and the recorded file full of ILA data here
 %sim_name = 'sim_100k_0x20c49.txt';
 %sim_name = "C:\Users\Zach\Documents\GradSchool\Fall_2019\EN525.742_SOC_Design_Lab\EN525.742_Project_3\project_3.sim\sim_1\behav\xsim\dds_output.txt";
-sim_name = "dds_output.txt";
+%sim_name = "dds_output_50K.txt";
+sim_name = "dds_output_100K.txt";
 % rec_name = 'file_100k_0x20c49.csv';
 %rec_name = "50KHz.csv";
 rec_name = "100KHz.csv";
 %'file_100k_0x20c49.csv'
 %% Enter the phase increment which you used in your design.  The matlab simulation will use the same
 % phase increment when comparing your results with the expected behavior
-sig_pinc = 67109; %hex2dec('20c49');
+%sig_pinc = 67109; % 50KHz
+sig_pinc = 134218; % 100KHz
 
 %% Define our simulation parameters
 N = 16000;
@@ -73,7 +75,10 @@ fid = fopen(rec_name);
 %C = textscan(fid, '%d%d%d%s%s%s%d%d', 'headerlines', 1, 'delimiter', ',');
 
 %Sample in Buffer,Sample in Window,TRIGGER,spi_rtl_sck_o,spi_rtl_io0_o,spi_rtl_io1_o,spi_rtl_ss_o_0_0,adc_ready,<const0>_1,<const0>_2,<const0>_3,dds_m_tvalid_out,dds_m_reset_out,<const0>_4,<const0>_5,<const0>_6,<const0>_7,<const0>_8,<const0>,ila_probe2[15:0],ila_probe3[15:0]
-C = textscan(fid, '%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%f%f', 'headerlines', 1, 'delimiter', ',');
+%C = textscan(fid, '%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%f%f', 'headerlines', 1, 'delimiter', ',');
+
+%Sample in Buffer,Sample in Window,TRIGGER,dds_m_tvalid_out,dds_m_reset_out,ila_probe3[15:0]
+C = textscan(fid, '%d%d%d%d%d%f', 'headerlines', 1, 'delimiter', ',');
 
 fclose(fid);
 sig = C;
@@ -85,9 +90,11 @@ trigger = C{3};
 % the ILA was setup to display it in binary.  If you change your ILA
 % display to display it as a signed integer, these should be in decimal
 %sample_out = bin2dec(C{6}); %convert the binary string to decimal (does it as unsigned)
-sample_out = C{20}; 
+%sample_out = C{20};
+sample_out = C{6}; 
 %reset = C{7};
-reset = C{13};
+%reset = C{13};
+reset = C{5};
 % next two lines fix the fact that bin2dec treats binary strings as
 % unsigned.  
 %inds = find(sample_out >= 2^15);  

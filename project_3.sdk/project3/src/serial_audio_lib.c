@@ -73,6 +73,7 @@ void print_main_menu(void) {
  */
 void handle_choice(void) {
 	char input_c =  getchar();
+	xil_printf("\033[2J"); // Clear screen
 	switch (input_c) {
 		case 'f':
 			get_freq(); break;

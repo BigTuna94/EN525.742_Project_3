@@ -1,8 +1,7 @@
 0.6
 2017.4
-Dec 15 2017
-21:07:18
-E:/EN525.742_Project_3/project_3.sim/sim_1/behav/xsim/glbl.v,1513215259,verilog,,,,glbl,,,,,,,,
-E:/EN525.742_Project_3/project_3.srcs/sim_1/new/dds_tb.vhd,1569447354,vhdl,,,,dds_tb,,,,,,,,
-E:/EN525.742_Project_3/project_3.srcs/sources_1/imports/project_1_part_2.srcs/sources_1/imports/p1p2_src/lowlevel_dac_intfc.vhd,1567884623,vhdl,E:/EN525.742_Project_3/project_3.srcs/sim_1/new/dds_tb.vhd,,,lowlevel_dac_intfc,,,,,,,,
-E:/EN525.742_Project_3/project_3.srcs/sources_1/ip/dds_compiler_0/sim/dds_compiler_0.vhd,1569447800,vhdl,,,,dds_compiler_0,,,,,,,,
+Jan 30 2018
+15:48:17
+C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.sim/sim_1/behav/xsim/glbl.v,1513215259,verilog,,,,glbl,,,,,,,,
+C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/sim_1/new/dds_tb.vhd,1570027746,vhdl,,,,dds_tb,,,,,,,,
+C:/Users/Zach/Documents/GradSchool/Fall_2019/EN525.742_SOC_Design_Lab/EN525.742_Project_3/project_3.srcs/sources_1/ip/dds_compiler_0/sim/dds_compiler_0.vhd,1569453962,vhdl,,,,dds_compiler_0,,,,,,,,
